@@ -45,6 +45,7 @@ const List = (props) => {
                 </p>
               </div>
               <p style={{ fontFamily: "Nanum Pen Script" }}>{post.content}</p>
+              <p style={{ color: "blue" }}>댓글{post.repleNum}</p>
             </Link>
           </ListItem>
         );

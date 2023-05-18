@@ -26,7 +26,7 @@ const Heading = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link
+            {/* <Link
               to="/"
               style={{
                 textDecoration: "none",
@@ -36,7 +36,8 @@ const Heading = () => {
               }}
             >
               home
-            </Link>
+            </Link> */}
+            <br />
             <Link
               to="/upload"
               style={{
@@ -46,9 +47,8 @@ const Heading = () => {
                 fontFamily: "'Yeon Sung', cursive",
               }}
             >
-              upload
+              글 작성
             </Link>
-            <br />
           </Nav>
         </Navbar.Collapse>
 
@@ -62,9 +62,7 @@ const Heading = () => {
               fontFamily: "'Yeon Sung', cursive",
             }}
           >
-            {user.displayName
-              ? `${user.displayName}님 접속중..`
-              : `로그인해주세요.`}
+            {user.displayName && `${user.displayName}님 접속중..`}
           </Link>
           {user.accessToken ? (
             <>
@@ -82,15 +80,19 @@ const Heading = () => {
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >
-                  MyPage
+                  마이페이지
                 </Link>
               </Navbar.Text>
               <br />
               <Navbar.Text
                 onClick={logoutHandler}
-                style={{ color: "white", cursor: "pointer" }}
+                style={{
+                  color: "white",
+                  cursor: "pointer",
+                  fontFamily: "'Yeon Sung', cursive",
+                }}
               >
-                logout
+                로그아웃
               </Navbar.Text>
             </>
           ) : (
@@ -102,7 +104,7 @@ const Heading = () => {
                 fontFamily: "'Yeon Sung', cursive",
               }}
             >
-              login
+              로그인
             </Link>
           )}
         </Navbar.Collapse>

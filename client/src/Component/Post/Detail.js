@@ -44,7 +44,8 @@ const Detail = (props) => {
         });
     }
   };
-  // console.log(props);
+  // console.log(props.postDetil.repleNum
+  //   );
   return (
     <PostDiv>
       <Post>
@@ -59,7 +60,7 @@ const Detail = (props) => {
             round={true}
             src={user.photoURL}
           />
-          작성자 : {props.postDetil.author.displayName}
+          {props.postDetil.author.displayName}
           <p className="time">
             {SetTime(props.postDetil.createdAt, props.postDetil.updatedAt)}
           </p>
@@ -73,8 +74,8 @@ const Detail = (props) => {
             style={{ width: "100%", height: "auto" }}
           />
         ) : null}
-
         <p>{props.postDetil.content}</p>
+        <p>댓글 {props.postDetil.repleNum}</p>
       </Post>
       {/* uid 값이 일치하면 수정 및 삭제 on */}
       {user.uid === props.postDetil.author.uid && (

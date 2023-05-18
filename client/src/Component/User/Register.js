@@ -153,6 +153,11 @@ const Register = () => {
           }}
         />
         {/* disabled={loaded} */}
+        <div style={{ textAlign: "center" }}>
+          <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
+          <input style={{ marginLeft: "5px" }} type="checkbox" />
+        </div>
+
         <button onClick={RegisterFunc}>가입신청</button>
       </form>
     </LoginDiv>
