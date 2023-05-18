@@ -1,20 +1,20 @@
-import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import "./App.css";
 //reduce
-import { useDispatch } from 'react-redux';
-import { clearUser, loginUser } from './Reducer/userSlice';
+import { useDispatch } from "react-redux";
+import { clearUser, loginUser } from "./Reducer/userSlice";
 //firebase
-import firebase from './firebase';
+import firebase from "./firebase";
 
-import Heading from './Component/Heading';
-import Upload from './Component/Post/Upload';
-import Edit from './Component/Post/Edit';
-import Login from './Component/User/Login';
-import Register from './Component/User/Register';
-import PostArea from './Component/Post/PostArea';
-import MyPage from './Component/User/MyPage';
-import MainPage from './Component/MainPage';
+import Heading from "./Component/Heading";
+import Upload from "./Component/Post/Upload";
+import Edit from "./Component/Post/Edit";
+import Login from "./Component/User/Login";
+import Register from "./Component/User/Register";
+import PostArea from "./Component/Post/PostArea";
+import MyPage from "./Component/User/MyPage";
+import MainPage from "./Component/MainPage";
 
 function App() {
   const dispatch = useDispatch();

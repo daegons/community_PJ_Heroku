@@ -4,6 +4,7 @@ import axios from "axios";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
+import CountdownTimer from "./assets/CountdownTimer";
 
 const MainPage = () => {
   const [postList, setPostList] = useState([]);
@@ -101,6 +102,8 @@ const MainPage = () => {
           </Dropdown.Item>
         </DropdownButton>
       </GNBDiv>
+      {/* 카운트 공지 */}
+      <CountdownTimer initialCountdown={7} />
       <List postList={postList} />
       {loadMore && (
         <FooterDiv>
