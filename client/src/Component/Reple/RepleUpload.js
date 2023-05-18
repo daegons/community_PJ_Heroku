@@ -1,33 +1,48 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 
-import { RepleListDiv } from "../../Style/RepleCSS.js";
-import RepleContent from "./RepleContent";
+import { RepleUploadDiv } from '../../Style/RepleCSS.js';
+function RepleUpload(props) {
+  const [reple, setReple] = useState('');
+  const user = useSelector((state) => state.user);
 
-const RepleList = (props) => {
-  const [repleList, setRepleList] = useState([]);
-  useEffect(() => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (!reple) {
+      return alert('댓글 내용을 채워주세요!');
+    }
     let body = {
+      reple: reple,
+      uid: user.uid,
       postId: props.postId,
     };
 
-    axios.post("/api/reple/getReple", body).then((res) => {
-      if (res.data.success) {
-        console.log(res.data);
-        setRepleList(res.data.repleList);
-        // setRepleList([...res.data.repleList]);
+    axios.post('/api/reple/submit', body).then((response) => {
+      if (response.data.success) {
+        alert('댓글 작성이 성공하였습니다.');
+        window.location.reload();
+      } else {
+        alert('댓글 작성에 실패하였습니다.');
       }
     });
-  }, []);
+  };
 
-  console.log(repleList);
   return (
-    <RepleListDiv>
-      {repleList.map((list, i) => {
-        return <RepleContent list={list} key={i} />;
-      })}
-    </RepleListDiv>
+    <RepleUploadDiv>
+      <form>
+        <input
+          type="text"
+          value={reple}
+          onChange={(e) => {
+            setReple(e.currentTarget.value);
+          }}
+        />
+        <button onClick={submitHandler}>등록</button>
+      </form>
+    </RepleUploadDiv>
   );
-};
+}
 
-export default RepleList;
+export default RepleUpload;

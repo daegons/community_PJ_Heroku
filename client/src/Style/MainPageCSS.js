@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const GNBDiv = styled.div`
   padding-top: 1rem;
@@ -32,6 +32,9 @@ const GNBDiv = styled.div`
       border: 0.5px solid #c6c6c6;
       border-radius: 0px 15px 15px 0px;
       margin-bottom: -1px;
+    }
+    i {
+      font-family: 'Yeon Sung', cursive;
     }
   }
 

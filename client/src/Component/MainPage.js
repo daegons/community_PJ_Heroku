@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import List from "../Component/Post/List";
-import axios from "axios";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
-import CountdownTimer from "./assets/CountdownTimer";
+import React, { useEffect, useState } from 'react';
+import List from '../Component/Post/List';
+import axios from 'axios';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import { GNBDiv, FooterDiv } from '../Style/MainPageCSS.js';
+import CountdownTimer from './assets/CountdownTimer';
 
 const MainPage = () => {
   const [postList, setPostList] = useState([]);
-  const [sort, setSort] = useState("최신순");
-  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState('최신순');
+  const [search, setSearch] = useState('');
   const [skip, setSkip] = useState(0);
   const [loadMore, setLoadMore] = useState(true);
 
@@ -21,7 +21,7 @@ const MainPage = () => {
     };
 
     axios
-      .post("/api/post/list", body)
+      .post('/api/post/list', body)
       .then((res) => {
         // console.log([...res.data.postList]);
         if (res.data.success) {
@@ -47,7 +47,7 @@ const MainPage = () => {
     };
 
     axios
-      .post("/api/post/list", body)
+      .post('/api/post/list', body)
       .then((res) => {
         // console.log([...res.data.postList]);
         if (res.data.success) {
@@ -75,10 +75,10 @@ const MainPage = () => {
   return (
     <div>
       <GNBDiv>
-        <div>
+        <div className="search">
           <input
             style={{ fontFamily: "'Yeon Sung', cursive" }}
-            placeholder="검색어.. enter"
+            placeholder="찾고 싶은 내용.."
             type="text"
             value={search}
             onKeyDown={(e) => {
@@ -88,27 +88,30 @@ const MainPage = () => {
               setSearch(e.currentTarget.value);
             }}
           />
+          <button onClick={() => SearchHandler()}>
+            <i className="bi bi-search">검색</i>
+          </button>
         </div>
         <DropdownButton
           style={{ fontFamily: "'Yeon Sung', cursive" }}
           variant="outline-secondary"
           title={sort}
         >
-          <Dropdown.Item onClick={() => setSort("최신순")}>
+          <Dropdown.Item onClick={() => setSort('최신순')}>
             최신순
           </Dropdown.Item>
-          <Dropdown.Item onClick={() => setSort("인기순")}>
+          <Dropdown.Item onClick={() => setSort('인기순')}>
             인기순
           </Dropdown.Item>
         </DropdownButton>
       </GNBDiv>
       {/* 카운트 공지 */}
-      <CountdownTimer initialCountdown={7} />
+      {/* <CountdownTimer initialCountdown={7} /> */}
       <List postList={postList} />
       {loadMore && (
         <FooterDiv>
           <button
-            style={{ marginBottom: "10vh" }}
+            style={{ marginBottom: '10vh' }}
             onClick={() => getPostLoadMore()}
           >
             more
