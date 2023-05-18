@@ -1,6 +1,6 @@
-import React from 'react';
-import { Form } from 'react-bootstrap';
-import axios from 'axios';
+import React from "react";
+import { Form } from "react-bootstrap";
+import axios from "axios";
 
 const ImageUpload = (props) => {
   /*
@@ -13,12 +13,12 @@ const ImageUpload = (props) => {
   const FileUpload = (e) => {
     // console.log(e.target.files[0]);
     var formData = new FormData(); //{}
-    formData.append('file', e.target.files[0]); //XMLHtpRequest
+    formData.append("file", e.target.files[0]); //XMLHtpRequest
     //콘솔로 formData 찍으면 빈 오브젝트로 출력// {}
     //for문으로 콘솔 찍어야 보임..
     // for (const keyValu of formData) console.log(keyValu);
     axios
-      .post('/api/post/image/upload', formData)
+      .post("/api/post/image/upload", formData)
       .then((res) => {
         // console.log(res.data);
         props.setImage(res.data.filePath);
@@ -27,7 +27,7 @@ const ImageUpload = (props) => {
   };
 
   return (
-    <div style={{ fontFamily: 'Yeon Sung' }}>
+    <div style={{ fontFamily: "Yeon Sung" }}>
       {/* accept="image/* 이미지들만 관리 */}
       <Form.Control
         onChange={FileUpload}

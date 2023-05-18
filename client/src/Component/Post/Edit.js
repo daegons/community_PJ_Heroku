@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
-import { UploadButtonDiv, UploadDiv, UploadForm } from '../../Style/UploadCSS';
-import ImageUpload from './ImageUpload';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { UploadButtonDiv, UploadDiv, UploadForm } from "../../Style/UploadCSS";
+import ImageUpload from "./ImageUpload";
 
 const Edit = () => {
   const [postDetil, setPostDetail] = useState({});
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   // const [Image, setImage] = useState("");
 
   //현재 페이지 id 때문..
@@ -19,7 +19,7 @@ const Edit = () => {
       postNum: params.postNum,
     };
     axios
-      .post('/api/post/detail', body)
+      .post("/api/post/detail", body)
       .then((res) => {
         if (res.data.success) {
           setPostDetail(res.data.post);
@@ -38,8 +38,8 @@ const Edit = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (title === '' || content === '') {
-      return alert('위 아래 위위 아래 채워주세요');
+    if (title === "" || content === "") {
+      return alert("위 아래 위위 아래 채워주세요");
     }
     let body = {
       title: title,
@@ -49,13 +49,13 @@ const Edit = () => {
     };
 
     axios
-      .post('/api/post/edit', body)
+      .post("/api/post/edit", body)
       .then((res) => {
         if (res.data.success) {
-          alert('글 수정이 완료되었습니다.✔');
+          alert("글 수정이 완료되었습니다.✔");
           navigate(`/post/${params.postNum}`);
         } else {
-          alert('글 수정에 실패하였습니다.❌');
+          alert("글 수정에 실패하였습니다.❌");
         }
       })
       .catch((err) => {
