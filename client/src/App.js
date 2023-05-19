@@ -61,8 +61,9 @@ function App() {
       <div className="landingpage">
         <video
           src={moldives}
-          loop
           autoPlay
+          loop
+          muted
           playsinline
           className="video-bg"
         ></video>
