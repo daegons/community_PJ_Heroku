@@ -64,10 +64,9 @@ function App() {
           autoPlay
           loop
           muted
-          iphone-inline-video
-          // playsinline
+          playsInline //왜 안먹히지;;
           className="video-bg"
-        ></video>
+        />
         <div className="bg-overlay">
           <Heading />
           <Routes>
