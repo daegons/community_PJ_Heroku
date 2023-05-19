@@ -58,7 +58,7 @@ function App() {
   return (
     <>
       <div className="landingpage">
-        <video src={moldives} autoPlay muted loop class="video-bg" />
+        <video src={moldives} autoPlay muted loop className="video-bg" />
         <div className="bg-overlay">
           <Heading />
           <Routes>
