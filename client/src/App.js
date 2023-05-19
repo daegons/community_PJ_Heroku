@@ -65,7 +65,7 @@ function App() {
           loop
           muted
           iphone-inline-video
-          playsinline
+          // playsinline
           className="video-bg"
         ></video>
         <div className="bg-overlay">
