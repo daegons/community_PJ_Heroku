@@ -56,17 +56,16 @@ function App() {
   // }, []);
 
   return (
+    //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
     <>
       <div className="landingpage">
         <video
           src={moldives}
-          autoPlay
-          muted
-          //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
-          playsinline
           loop
+          autoPlay
+          playsinline
           className="video-bg"
-        />
+        ></video>
         <div className="bg-overlay">
           <Heading />
           <Routes>
