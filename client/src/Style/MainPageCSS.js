@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const GNBDiv = styled.div`
   padding-top: 1rem;
@@ -20,11 +20,14 @@ const GNBDiv = styled.div`
     input {
       padding: 5px 20px;
       border-radius: 15px 0px 0px 15px;
-      border: 0.5px solid #c6c6c6;
+      border: 0.1px solid #c6c6c6;
       height: 100%;
+      background-color: white;
+      opacity: 0.4;
       &:active,
       &:focus {
         outline: none;
+        opacity: 0.6;
       }
     }
     button {
@@ -32,9 +35,14 @@ const GNBDiv = styled.div`
       border: 0.5px solid #c6c6c6;
       border-radius: 0px 15px 15px 0px;
       margin-bottom: -1px;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.9;
+      }
     }
     i {
-      font-family: 'Yeon Sung', cursive;
+      font-family: "Yeon Sung", cursive;
     }
   }
 

@@ -18,7 +18,7 @@ const Heading = () => {
     navigate("/");
   };
   return (
-    <Navbar bg="dark" expand="md" variant="dark">
+    <Navbar style={{ backgroundColor: "blue" }} expand="md" variant="white">
       <Container>
         <Navbar.Brand href="/" style={font}>
           커뮤니티
@@ -96,16 +96,20 @@ const Heading = () => {
               </Navbar.Text>
             </>
           ) : (
-            <Link
-              to="/login"
-              style={{
-                textDecoration: "none",
-                color: "white",
-                fontFamily: "'Yeon Sung', cursive",
-              }}
-            >
-              로그인
-            </Link>
+            <Nav>
+              <Navbar.Text>
+                <Link
+                  to="/login"
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    fontFamily: "'Yeon Sung', cursive",
+                  }}
+                >
+                  로그인
+                </Link>
+              </Navbar.Text>
+            </Nav>
           )}
         </Navbar.Collapse>
       </Container>
