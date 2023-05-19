@@ -64,6 +64,7 @@ function App() {
           autoPlay
           loop
           muted
+          iphone-inline-video
           playsinline
           className="video-bg"
         ></video>
