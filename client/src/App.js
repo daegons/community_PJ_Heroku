@@ -58,7 +58,15 @@ function App() {
   return (
     <>
       <div className="landingpage">
-        <video src={moldives} autoPlay muted loop className="video-bg" />
+        <video
+          src={moldives}
+          autoPlay
+          muted
+          //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
+          playsinline
+          loop
+          className="video-bg"
+        />
         <div className="bg-overlay">
           <Heading />
           <Routes>
