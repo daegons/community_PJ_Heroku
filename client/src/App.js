@@ -19,13 +19,12 @@ import MainPage from "./Component/MainPage";
 // //배경 영상 관련 유투브
 // import ReactPlayer from "react-player";
 
-// import "./Component/assets/Landingpage.css";
+import "./Component/assets/Landingpage.css";
 
 // import yousolo from "./Component/assets/olnyphYousolo.mp4";
 // import tv from "./Component/assets/tv.mp4";
 // import cloud from "./Component/assets/cloud.mp4";
-// import moldives from "./Component/assets/moldives.mp4";
-import LandingPage from "./Component/LandingPage/LandingPage";
+import moldives from "./Component/assets/moldives.mp4";
 
 function App() {
   const dispatch = useDispatch();
@@ -59,36 +58,37 @@ function App() {
   return (
     //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
     <>
-      {/* <div className="landingpage">
+      <div className="landingpage">
         <video
           src={moldives}
           autoPlay
           loop
           muted
           playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
+          poster="./Component/assets/pictur_moldives.jpg"
           className="video-bg"
         />
-        <div className="bg-overlay"></div>
-      </div> */}
-      <Heading />
-      <LandingPage />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        {/* mongoose를 통해 post, Reple 구현 */}
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/post/:postNum" element={<PostArea />} />
-        <Route path="/edit/:postNum" element={<Edit />} />
-        {/* firebase Auth(인증)통해서 login구현 */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {/* 
+        <div className="bg-overlay">
+          <Heading />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            {/* mongoose를 통해 post, Reple 구현 */}
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/post/:postNum" element={<PostArea />} />
+            <Route path="/edit/:postNum" element={<Edit />} />
+            {/* firebase Auth(인증)통해서 login구현 */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            {/* 
         Add
         1. 검색기능 -(post관련)
         2. 유저프로필 이미지 & 이미지 변경
         3. 정렬 최신 / 인기 - (post관련)
       */}
-        <Route path="/mypage" element={<MyPage />} />
-      </Routes>
+            <Route path="/mypage" element={<MyPage />} />
+          </Routes>
+        </div>
+      </div>
     </>
   );
 }
