@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const CountdownTimer = (props) => {
   const [countdown, setCountdown] = useState(props.initialCountdown);
 
-  const user = useSelector((state) => state.user);
+  //   const user = useSelector((state) => state.user);
   //   console.log(user.uid);
   console.log(props);
   useEffect(() => {

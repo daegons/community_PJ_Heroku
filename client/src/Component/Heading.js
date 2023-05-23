@@ -55,9 +55,20 @@ const Heading = () => {
             >
               글 작성
             </Link>
+            <Link
+              to="/subpage"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginRight: "10px",
+                fontFamily: "'Yeon Sung', cursive",
+              }}
+            >
+              서브페이지
+            </Link>
           </Nav>
+          <br />
         </Navbar.Collapse>
-
         <Navbar.Collapse className="justify-content-end">
           <Link
             to="/"

@@ -23,9 +23,10 @@ import "./Component/assets/Landingpage.css";
 
 // import yousolo from "./Component/assets/olnyphYousolo.mp4";
 // import tv from "./Component/assets/tv.mp4";
-// import cloud from "./Component/assets/cloud.mp4";
-import moldives from "./Component/assets/moldives.mp4";
+import cloud from "./Component/assets/cloud.mp4";
+// import moldives from "./Component/assets/moldives.mp4";
 import Footer from "./Component/Post/Footer";
+import SubPage from "./Component/Post/SubPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ function App() {
       <div className="landingpage">
         <video
           // poster="./Component/assets/pictur_moldives.jpg"
-          src={moldives}
+          src={cloud}
           autoPlay
           loop
           muted
@@ -80,17 +81,19 @@ function App() {
             {/* firebase Auth(인증)통해서 login구현 */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            {/* 
+            <Route path="/mypage" element={<MyPage />} />
+            {/* 서브페이지 추가 */}
+            <Route path="/subpage" element={<SubPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+      {/* 
         Add
         1. 검색기능 -(post관련)
         2. 유저프로필 이미지 & 이미지 변경
         3. 정렬 최신 / 인기 - (post관련)
       */}
-            <Route path="/mypage" element={<MyPage />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const LoginDiv = styled.div`
   width: 50%;
@@ -50,8 +50,8 @@ const LoginDiv = styled.div`
 `;
 
 const MyPageDiv = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   form {
     margin-top: 2rem;
     width: 50%;

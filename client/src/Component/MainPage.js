@@ -98,7 +98,9 @@ const MainPage = () => {
         </div>
         <DropdownButton
           style={{ fontFamily: "'Yeon Sung', cursive" }}
-          variant="outline-secondary"
+          // variant="outline-secondary"
+          // variant="white"
+          // variant="secondary"
           title={sort}
         >
           <Dropdown.Item onClick={() => setSort("최신순")}>

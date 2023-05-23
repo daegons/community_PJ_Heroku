@@ -1,13 +1,14 @@
 // Loading.js
 import React from "react";
-import { Background } from "./LoadingCSS";
-// import Spiner from './spiner.gif';
-import Spiner from "./Spin-1s-200px.gif";
+import { Background, LoadingText } from "./LoadingCSS";
+
+//svg가 안깨짐.. good!!!!
+import Spiner from "./Ripple.svg";
 const Loading = () => {
   return (
     <Background>
-      <img src={Spiner} alt="로딩중" width="6%" />
-      {/* <LoadingText>로딩중</LoadingText> */}
+      <img src={Spiner} alt="로딩중" />
+      <LoadingText>Loading..</LoadingText>
     </Background>
   );
 };

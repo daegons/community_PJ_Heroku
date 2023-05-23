@@ -8,22 +8,10 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./Reducer/store";
 import { Provider } from "react-redux";
 
-// import ReactPlayer from "react-player";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      {/* <ReactPlayer
-        url={"https://youtu.be/UxpjpxLi-Qg"}
-        width="100vw"
-        height="20vh"
-        loop={true}
-        playing={true}
-        muted={true}
-        controls={false}
-        style={{ pointerEvents: "none" }}
-      /> */}
       <App />
     </Provider>
   </BrowserRouter>
