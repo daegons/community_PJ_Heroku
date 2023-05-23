@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 const PostDiv = styled.div`
-  padding: 1rem 0px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   max-width: 756px;
   margin: 0 auto !important;
   @media (max-width: 756px) {
@@ -25,13 +26,33 @@ const Post = styled.div`
   padding: 30px 20px;
   box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
     0px 15px 12px rgba(0, 0, 0, 0.1);
-  h2 {
+  h1 {
     font-weight: bold;
-    font-family: 'Yeon Sung', cursive;
   }
   p {
     margin-bottom: 0px;
-    font-family: 'Nanum Pen Script';
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    p {
+      color: darkgrey;
+      margin-bottom: 0px;
+      margin-left: 10px;
+      &.time {
+        font-size: 10px;
+      }
+      &.admin {
+        display: flex;
+        align-items: center;
+      }
+    }
+    @media (max-width: 756px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 `;
 

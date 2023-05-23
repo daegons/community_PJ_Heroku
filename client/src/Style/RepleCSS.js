@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const RepleAreaDiv = styled.div`
   padding-bottom: 1rem;

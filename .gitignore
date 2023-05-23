@@ -1,4 +1,4 @@
 node_modules
 
-/client/src/firebase.js
-/server/config/dev.js
+# /client/src/firebase.js
+# /server/config/dev.js

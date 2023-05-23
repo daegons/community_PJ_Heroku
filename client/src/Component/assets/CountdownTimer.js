@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
+import { IoIosMegaphone } from "react-icons/io";
 // import { useSelector } from "react-redux";
 
 const CountdownTimer = (props) => {
@@ -32,7 +33,7 @@ const CountdownTimer = (props) => {
           }}
         >
           <Card.Header style={{ background: "rgba(37, 83, 210, 0.278)" }}>
-            공지
+           <IoIosMegaphone/> 공지  
           </Card.Header>
           <Card.Body style={{ background: "rgba(119, 141, 202, 0.164)" }}>
             <Card.Text>비방 욕설 영구 밴</Card.Text>

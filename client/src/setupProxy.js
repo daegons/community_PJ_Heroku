@@ -1,6 +1,8 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function (app) {
+
+//* '/api의 요청은 로컬 5000번으로 보낸다..
+module.exports =  (app)=> {
   app.use(
     '/api',
     createProxyMiddleware({
@@ -10,4 +12,3 @@ module.exports = function (app) {
   );
 };
 
-//에러.. 화살표 함수 때문인가??? 혹시몰라 바꿈

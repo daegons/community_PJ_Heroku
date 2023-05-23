@@ -6,6 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useSelector } from "react-redux";
 import firebase from "firebase/compat/app";
+import  { MdLogin }  from 'react-icons/md';
+import  { GrLogout }  from 'react-icons/gr';
 
 import mainImg from "./assets/mainIcon.png";
 
@@ -109,7 +111,7 @@ const Heading = () => {
                   fontFamily: "'Yeon Sung', cursive",
                 }}
               >
-                로그아웃
+                <GrLogout style={{fontSize:'20px'}}/>
               </Navbar.Text>
             </>
           ) : (
@@ -123,7 +125,7 @@ const Heading = () => {
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >
-                  로그인
+                  <MdLogin style={{fontSize:'20px'}}/>
                 </Link>
               </Navbar.Text>
             </Nav>
