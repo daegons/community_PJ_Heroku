@@ -20,9 +20,11 @@ const SpinnerDiv = styled.div`
 `;
 
 const Post = styled.div`
+border-radius:15px;
   width: 100%;
   height: auto;
-  background: #ffffff;
+  background: white;
+  opacity:0.9;
   padding: 30px 20px;
   box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
     0px 15px 12px rgba(0, 0, 0, 0.1);
