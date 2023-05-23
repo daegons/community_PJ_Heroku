@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { IoIosMegaphone } from "react-icons/io";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-const CountdownTimer = (props) => {
-  const [countdown, setCountdown] = useState(props.initialCountdown);
+const CountdownTimer = ({initialCountdown}) => {
+  const [countdown, setCountdown] = useState(initialCountdown);
 
-  //   const user = useSelector((state) => state.user);
-  //   console.log(user.uid);
-  console.log(props);
+    const user = useSelector((state) => state.user);
+    // console.log(user.uid);
+
   useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => {
         setCountdown(countdown - 1);
-      }, 1000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
   }, [countdown]);
 
+
   return (
     <div>
-      {countdown > 0 && (
+      {countdown > 0 && user.uid ?  (
         <Card
           bg="light"
           style={{
@@ -39,7 +40,7 @@ const CountdownTimer = (props) => {
             <Card.Text>비방 욕설 영구 밴</Card.Text>
           </Card.Body>
         </Card>
-      )}
+      ) : ""}
     </div>
   );
 };

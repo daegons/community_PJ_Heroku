@@ -112,7 +112,7 @@ const MainPage = () => {
         </DropdownButton>
       </GNBDiv>
       {/* 카운트 공지 */}
-      <CountdownTimer initialCountdown={5} postList={postList} />
+      <CountdownTimer initialCountdown={1} />
       <List postList={postList} />
       {loadMore && (
         <FooterDiv>
