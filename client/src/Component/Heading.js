@@ -7,6 +7,8 @@ import Navbar from "react-bootstrap/Navbar";
 import { useSelector } from "react-redux";
 import firebase from "firebase/compat/app";
 
+import mainImg from "./assets/mainIcon.png";
+
 const Heading = () => {
   const font = { fontFamily: "'Yeon Sung', cursive" };
   const user = useSelector((state) => state.user);
@@ -18,10 +20,14 @@ const Heading = () => {
     navigate("/");
   };
   return (
-    <Navbar style={{ backgroundColor: "blue" }} expand="md" variant="white">
+    <Navbar
+      style={{ backgroundColor: "rgba(255, 255, 255, 0.7)" }}
+      expand="md"
+      variant="white"
+    >
       <Container>
         <Navbar.Brand href="/" style={font}>
-          커뮤니티
+          <img src={mainImg} alt="메인 아이콘" width="43%" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -42,7 +48,7 @@ const Heading = () => {
               to="/upload"
               style={{
                 textDecoration: "none",
-                color: "white",
+                color: "black",
                 marginRight: "10px",
                 fontFamily: "'Yeon Sung', cursive",
               }}
@@ -57,7 +63,7 @@ const Heading = () => {
             to="/"
             style={{
               textDecoration: "none",
-              color: "white",
+              color: "black",
               marginRight: "15px",
               fontFamily: "'Yeon Sung', cursive",
             }}
@@ -69,13 +75,13 @@ const Heading = () => {
               <br />
               <Navbar.Text
                 onClick={() => {}}
-                style={{ color: "white", cursor: "pointer" }}
+                style={{ color: "black", cursor: "pointer" }}
               >
                 <Link
                   to="/mypage"
                   style={{
                     textDecoration: "none",
-                    color: "white",
+                    color: "black",
                     marginRight: "15px",
                     fontFamily: "'Yeon Sung', cursive",
                   }}
@@ -87,7 +93,7 @@ const Heading = () => {
               <Navbar.Text
                 onClick={logoutHandler}
                 style={{
-                  color: "white",
+                  color: "black",
                   cursor: "pointer",
                   fontFamily: "'Yeon Sung', cursive",
                 }}
@@ -102,7 +108,7 @@ const Heading = () => {
                   to="/login"
                   style={{
                     textDecoration: "none",
-                    color: "white",
+                    color: "black",
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >

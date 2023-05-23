@@ -25,6 +25,7 @@ import "./Component/assets/Landingpage.css";
 // import tv from "./Component/assets/tv.mp4";
 // import cloud from "./Component/assets/cloud.mp4";
 import moldives from "./Component/assets/moldives.mp4";
+import Footer from "./Component/Post/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,12 +61,12 @@ function App() {
     <>
       <div className="landingpage">
         <video
+          // poster="./Component/assets/pictur_moldives.jpg"
           src={moldives}
           autoPlay
           loop
           muted
           playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
-          poster="./Component/assets/pictur_moldives.jpg"
           className="video-bg"
         />
         <div className="bg-overlay">
@@ -88,6 +89,7 @@ function App() {
             <Route path="/mypage" element={<MyPage />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </>
   );

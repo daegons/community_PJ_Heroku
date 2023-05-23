@@ -1,7 +1,8 @@
 // Loading.js
-import React from 'react';
-import { Background } from './LoadingCSS';
-import Spiner from './spiner.gif';
+import React from "react";
+import { Background } from "./LoadingCSS";
+// import Spiner from './spiner.gif';
+import Spiner from "./Spin-1s-200px.gif";
 const Loading = () => {
   return (
     <Background>
