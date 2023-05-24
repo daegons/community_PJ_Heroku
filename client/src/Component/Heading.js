@@ -6,19 +6,24 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useSelector } from "react-redux";
 import firebase from "firebase/compat/app";
-import  { MdLogin }  from 'react-icons/md';
-import  { GrLogout }  from 'react-icons/gr';
+import { MdLogin } from "react-icons/md";
+import { GrLogout } from "react-icons/gr";
+
+import { BsEmojiSmile, BsEmojiSunglasses } from "react-icons/bs";
 
 import mainImg from "./assets/mainIcon.png";
 
-const Heading = () => {
-  const font = { fontFamily: "'Yeon Sung', cursive" };
+const Heading = (props) => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
-
+  console.log(props);
   const logoutHandler = () => {
     alert(`${user.displayName}님 안녕히가세요.`);
     firebase.auth().signOut();
+    navigate("/");
+  };
+
+  const mainPageMoveHandler = () => {
     navigate("/");
   };
   return (
@@ -28,7 +33,10 @@ const Heading = () => {
       variant="white"
     >
       <Container>
-        <Navbar.Brand href="/" style={font}>
+        <Navbar.Brand
+          style={{ cursor: "pointer" }}
+          onClick={mainPageMoveHandler}
+        >
           <img src={mainImg} alt="메인 아이콘" width="43%" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -73,8 +81,8 @@ const Heading = () => {
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Link
-            to="/"
             style={{
+              cursor: "default",
               textDecoration: "none",
               color: "black",
               marginRight: "15px",
@@ -103,6 +111,42 @@ const Heading = () => {
                 </Link>
               </Navbar.Text>
               <br />
+              {!props.tab ? (
+                <Navbar.Text
+                  onClick={() => {}}
+                  style={{ color: "black", cursor: "pointer" }}
+                >
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      marginRight: "15px",
+                      fontFamily: "'Yeon Sung', cursive",
+                    }}
+                    onClick={props.onBlueRightHandler}
+                  >
+                    <BsEmojiSmile style={{ fontSize: "20px" }} />
+                  </Link>
+                </Navbar.Text>
+              ) : (
+                <Navbar.Text
+                  onClick={() => {}}
+                  style={{ color: "black", cursor: "pointer" }}
+                >
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      marginRight: "15px",
+                      fontFamily: "'Yeon Sung', cursive",
+                    }}
+                    onClick={props.onBlueRightHandler}
+                  >
+                    <BsEmojiSunglasses style={{ fontSize: "20px" }} />
+                  </Link>
+                </Navbar.Text>
+              )}
+              <br />
               <Navbar.Text
                 onClick={logoutHandler}
                 style={{
@@ -111,7 +155,7 @@ const Heading = () => {
                   fontFamily: "'Yeon Sung', cursive",
                 }}
               >
-                <GrLogout style={{fontSize:'20px'}}/>
+                <GrLogout style={{ fontSize: "20px" }} />
               </Navbar.Text>
             </>
           ) : (
@@ -125,7 +169,7 @@ const Heading = () => {
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >
-                  <MdLogin style={{fontSize:'20px'}}/>
+                  <MdLogin style={{ fontSize: "20px" }} />
                 </Link>
               </Navbar.Text>
             </Nav>

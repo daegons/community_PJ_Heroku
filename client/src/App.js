@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 //reduce
 import { useDispatch } from "react-redux";
@@ -30,6 +30,7 @@ import SubPage from "./Component/Post/SubPage";
 
 function App() {
   const dispatch = useDispatch();
+  const [tab, setTab] = useState(false);
   // console.log(user.displayName);
   useEffect(() => {
     //onAuthStateChanged 사용자의 상태 변화에 따라 추적 함수..
@@ -57,10 +58,16 @@ function App() {
   //   firebase.auth().signOut();
   // }, []);
 
+  const onBlueRightHandler = (e) => {
+    e.preventDefault();
+    tab === false ? setTab(true) : setTab(false);
+    // if()
+  };
+
   return (
     //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
     <>
-      <div className="landingpage">
+      <div className={`landingpage ${tab === true ? "active" : ""}`}>
         <video
           // poster="./Component/assets/pictur_moldives.jpg"
           src={cloud}
@@ -71,7 +78,7 @@ function App() {
           className="video-bg"
         />
         <div className="bg-overlay">
-          <Heading />
+          <Heading onBlueRightHandler={onBlueRightHandler} tab={tab} />
           <Routes>
             <Route path="/" element={<MainPage />} />
             {/* mongoose를 통해 post, Reple 구현 */}
