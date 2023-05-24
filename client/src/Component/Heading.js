@@ -13,6 +13,12 @@ import { BsEmojiSmile, BsEmojiSunglasses } from "react-icons/bs";
 
 import mainImg from "./assets/mainIcon.png";
 
+import lightoff from "./assets/lightoff.svg";
+import lighton from "./assets/lighton.svg";
+import contentWright from "./assets/contentWright.svg";
+import mainLogo from "./assets/mainLogo.svg";
+import userEdit from "./assets/userEdit.svg";
+
 const Heading = (props) => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -37,7 +43,7 @@ const Heading = (props) => {
           style={{ cursor: "pointer" }}
           onClick={mainPageMoveHandler}
         >
-          <img src={mainImg} alt="메인 아이콘" width="43%" />
+          <img src={mainLogo} alt="메인 아이콘" width="40px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -63,7 +69,7 @@ const Heading = (props) => {
                 fontFamily: "'Yeon Sung', cursive",
               }}
             >
-              글 작성
+              <img src={contentWright} alt="글작성" style={{ width: "20px" }} />
             </Link>
             <Link
               to="/subpage"
@@ -107,7 +113,11 @@ const Heading = (props) => {
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >
-                  마이페이지
+                  <img
+                    src={userEdit}
+                    alt="마이페이지"
+                    style={{ width: "32px" }}
+                  />
                 </Link>
               </Navbar.Text>
               <br />
@@ -125,7 +135,12 @@ const Heading = (props) => {
                     }}
                     onClick={props.onBlueRightHandler}
                   >
-                    <BsEmojiSmile style={{ fontSize: "20px" }} />
+                    {/* <BsEmojiSmile style={{ fontSize: "20px" }} /> */}
+                    <img
+                      src={lighton}
+                      alt="블루스크린 끄기"
+                      style={{ width: "32px" }}
+                    />
                   </Link>
                 </Navbar.Text>
               ) : (
@@ -142,7 +157,11 @@ const Heading = (props) => {
                     }}
                     onClick={props.onBlueRightHandler}
                   >
-                    <BsEmojiSunglasses style={{ fontSize: "20px" }} />
+                    <img
+                      src={lightoff}
+                      alt="블루스크린 켜기"
+                      style={{ width: "32px" }}
+                    />
                   </Link>
                 </Navbar.Text>
               )}
@@ -155,7 +174,7 @@ const Heading = (props) => {
                   fontFamily: "'Yeon Sung', cursive",
                 }}
               >
-                <GrLogout style={{ fontSize: "20px" }} />
+                <GrLogout style={{ fontSize: "24px" }} />
               </Navbar.Text>
             </>
           ) : (
@@ -169,7 +188,7 @@ const Heading = (props) => {
                     fontFamily: "'Yeon Sung', cursive",
                   }}
                 >
-                  <MdLogin style={{ fontSize: "20px" }} />
+                  <MdLogin style={{ fontSize: "24px" }} />
                 </Link>
               </Navbar.Text>
             </Nav>
