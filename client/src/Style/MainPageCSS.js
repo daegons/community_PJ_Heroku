@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 
 const GNBDiv = styled.div`
   padding-top: 1rem;
-  padding-bottom: 1rem;
-  max-width: 756px;
+  /* padding-bottom: 1px; */
+  max-width: 750px;
   margin: 0 auto !important;
 
   display: flex;
@@ -13,8 +13,8 @@ const GNBDiv = styled.div`
 
   .search {
     display: grid;
-    min-width: 40%;
-    grid-template-columns: 8fr 2fr;
+    min-width: 70%;
+    grid-template-columns: 8fr 1fr;
     grid-template-rows: auto;
 
     input {
@@ -23,11 +23,11 @@ const GNBDiv = styled.div`
       border: 0.1px solid #c6c6c6;
       height: 100%;
       background-color: white;
-      opacity: 0.4;
+      opacity: 0.5;
       &:active,
       &:focus {
         outline: none;
-        opacity: 0.6;
+        opacity: 0.7;
       }
     }
     button {
@@ -41,13 +41,13 @@ const GNBDiv = styled.div`
         opacity: 0.9;
       }
     }
-    i {
-      font-family: "Yeon Sung", cursive;
+    img {
+      width:20px;
     }
   }
 
   @media (max-width: 756px) {
-    width: 90%;
+    width: 85%;
     .search {
       width: auto;
       input {
@@ -57,7 +57,7 @@ const GNBDiv = styled.div`
     }
     .btn {
       font-size: 0.75rem;
-      margin-left: 1rem;
+      /* margin-left: 1rem; */
     }
   }
 `;
@@ -73,5 +73,7 @@ const FooterDiv = styled.div`
     font-weight: bold;
   }
 `;
+
+
 
 export { GNBDiv, FooterDiv };

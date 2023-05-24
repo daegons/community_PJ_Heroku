@@ -14,7 +14,7 @@ const ListItem = styled.div`
   height: auto;
   min-height: 120px;
   background: white;
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-bottom: 5vh;
   padding: 20px;
   border-radius:15px;

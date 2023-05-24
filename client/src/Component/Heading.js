@@ -9,9 +9,9 @@ import firebase from "firebase/compat/app";
 import { MdLogin } from "react-icons/md";
 import { GrLogout } from "react-icons/gr";
 
-import { BsEmojiSmile, BsEmojiSunglasses } from "react-icons/bs";
+// import { BsEmojiSmile, BsEmojiSunglasses } from "react-icons/bs";
 
-import mainImg from "./assets/mainIcon.png";
+// import mainImg from "./assets/mainIcon.png";
 
 import lightoff from "./assets/lightoff.svg";
 import lighton from "./assets/lighton.svg";

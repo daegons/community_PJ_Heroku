@@ -21,12 +21,12 @@ const CountdownTimer = ({initialCountdown}) => {
 
 
   return (
-    <div>
+    <div style={{padding:"30px 0 0 0"}}>
       {countdown > 0 && user.uid ?  (
         <Card
           bg="light"
           style={{
-            width: "40%",
+            width: "37%",
             height: "90px",
             background: "black",
             margin: "auto",

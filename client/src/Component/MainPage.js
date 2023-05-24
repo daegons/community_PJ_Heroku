@@ -6,7 +6,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
 import CountdownTimer from "./assets/CountdownTimer";
 
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
+import searchIcon from "./assets/search2.svg"
 
 const MainPage = () => {
   const [postList, setPostList] = useState([]);
@@ -76,6 +77,8 @@ const MainPage = () => {
 
   return (
     <div>
+            {/* 카운트 공지 */}
+            <CountdownTimer initialCountdown={1} />
       <GNBDiv>
         <div className="search">
           <input
@@ -91,13 +94,12 @@ const MainPage = () => {
             }}
           />
           <button onClick={() => SearchHandler()}>
-            <i className="bi bi-search">
-              <FaSearch />
-            </i>
+              {/* <FaSearch /> */}
+              <img src={searchIcon} alt="메인 아이콘" />
           </button>
         </div>
         <DropdownButton
-          style={{ fontFamily: "'Yeon Sung', cursive" }}
+          style={{ fontFamily: "'Yeon Sung', cursive"}}
           // variant="outline-secondary"
           // variant="white"
           // variant="secondary"
@@ -111,8 +113,6 @@ const MainPage = () => {
           </Dropdown.Item>
         </DropdownButton>
       </GNBDiv>
-      {/* 카운트 공지 */}
-      <CountdownTimer initialCountdown={1} />
       <List postList={postList} />
       {loadMore && (
         <FooterDiv>
