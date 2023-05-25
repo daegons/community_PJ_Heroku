@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ImageUpload from "./ImageUpload";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
 const Upload = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");

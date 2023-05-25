@@ -1,11 +1,24 @@
-import React from "react";
-import ReactPlayer from "react-player";
+import React, { useEffect } from "react";
+// import ReactPlayer from "react-player";
 
 const SubPage = () => {
+  useEffect(() => {
+    document.body.style.cssText = `
+      position: fixed; 
+      top: -${window.scrollY}px;
+      overflow-y: hidden;
+      width: 100%;`;
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = "";
+      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+    };
+  }, []);
+
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <h1>서브페이지 입니다.</h1>
-      <ReactPlayer
+      {/* <ReactPlayer
         url={"https://youtu.be/UxpjpxLi-Qg"}
         width="100%"
         height="100%"
@@ -14,7 +27,7 @@ const SubPage = () => {
         muted={true}
         controls={false}
         style={{ pointerEvents: "none" }}
-      />
+      /> */}
     </div>
   );
 };

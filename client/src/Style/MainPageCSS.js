@@ -42,7 +42,7 @@ const GNBDiv = styled.div`
       }
     }
     img {
-      width:20px;
+      width: 20px;
     }
   }
 
@@ -67,13 +67,19 @@ const FooterDiv = styled.div`
   display: flex;
   justify-content: center;
   button {
-    width: auto;
+    width: 30%;
+    height: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 15px;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     font-weight: bold;
+    @media (max-width: 756px) {
+      width: 80%;
+    }
   }
 `;
-
-
 
 export { GNBDiv, FooterDiv };

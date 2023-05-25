@@ -7,7 +7,10 @@ import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
 import CountdownTimer from "./assets/CountdownTimer";
 
 // import { FaSearch } from "react-icons/fa";
-import searchIcon from "./assets/search2.svg"
+import searchIcon from "./assets/search2.svg";
+
+import more from "./assets/more.svg";
+// import zumzum from "./assets/zumzum.svg";
 
 const MainPage = () => {
   const [postList, setPostList] = useState([]);
@@ -77,8 +80,8 @@ const MainPage = () => {
 
   return (
     <div>
-            {/* 카운트 공지 */}
-            <CountdownTimer initialCountdown={1} />
+      {/* 카운트 공지 */}
+      <CountdownTimer initialCountdown={1} />
       <GNBDiv>
         <div className="search">
           <input
@@ -94,12 +97,12 @@ const MainPage = () => {
             }}
           />
           <button onClick={() => SearchHandler()}>
-              {/* <FaSearch /> */}
-              <img src={searchIcon} alt="메인 아이콘" />
+            {/* <FaSearch /> */}
+            <img src={searchIcon} alt="메인 아이콘" />
           </button>
         </div>
         <DropdownButton
-          style={{ fontFamily: "'Yeon Sung', cursive"}}
+          style={{ fontFamily: "'Yeon Sung', cursive" }}
           // variant="outline-secondary"
           // variant="white"
           // variant="secondary"
@@ -117,10 +120,14 @@ const MainPage = () => {
       {loadMore && (
         <FooterDiv>
           <button
-            style={{ marginBottom: "10vh" }}
+            style={{
+              marginBottom: "10vh",
+              border: "none",
+              background: "rgba(61, 149, 189, 0.579)",
+            }}
             onClick={() => getPostLoadMore()}
           >
-            more
+            <img src={more} alt="더보기" />
           </button>
         </FooterDiv>
       )}

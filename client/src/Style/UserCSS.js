@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
 
 const LoginDiv = styled.div`
+  /* background: white; */
+
+  height: 100vh;
   width: 50%;
+
   max-width: 360px;
   margin: 0 auto;
-  margin-top: 5rem;
+  padding-top: 8rem;
   form {
-    width: 70%;
+    width: 100%;
     padding: 20px;
     box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
       0px 15px 12px rgba(0, 0, 0, 0.1);
@@ -18,9 +22,9 @@ const LoginDiv = styled.div`
     input {
       border-radius: 10px;
       border: 1px solid #c6c6c6;
-      padding: 5px;
       margin-bottom: 10px;
-
+      opacity: 0.9;
+      padding: 5px 5px 5px 15px;
       &:active,
       &:focus {
         outline: none;
@@ -29,14 +33,15 @@ const LoginDiv = styled.div`
     button {
       border-radius: 15px;
       padding: 5px 10px;
-      background-color: black;
+      background: rgba(75, 155, 185, 0.7);
       color: white;
-      border: 1px solid black;
+      border: 1px solid grey;
       margin-top: 10px;
+      transition: all 0.6s ease;
       &:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid black;
+        background: rgba(48, 124, 194, 0.8);
+        color: white;
+        border: 1px solid grey;
       }
     }
     @media (max-width: 756px) {
@@ -44,14 +49,14 @@ const LoginDiv = styled.div`
     }
   }
   @media (max-width: 756px) {
-    width: 90%;
-    margin-top: 3rem;
+    width: 65%;
+    margin: 0 auto;
   }
 `;
 
 const MyPageDiv = styled.div`
   width: 100%;
-  height: auto;
+  height: 100vh;
   form {
     margin-top: 2rem;
     width: 50%;

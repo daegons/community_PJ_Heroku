@@ -3,15 +3,17 @@ import styled from "@emotion/styled";
 font-family: "Nanum Pen Script", cursive; 가장 아래 왼쪽부터 속성을 따름 */
 const UploadDiv = styled.div`
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  height: 100vh;
+  padding-top: 5rem;
+  /* margin-bottom: 1rem; */
 `;
 
 const UploadForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 40%;
   margin: 0 auto;
+  opacity: 0.8;
   #title {
     border-radius: 6px;
     border: 1px solid #c6c6c6;
@@ -22,6 +24,9 @@ const UploadForm = styled.form`
     &:focus {
       outline: none;
     }
+  }
+  @media (max-width: 756px) {
+    width: 70%;
   }
 
   textarea {
@@ -66,13 +71,13 @@ const UploadButtonDiv = styled.div`
   button {
     border-radius: 6px;
     padding: 5px 10px;
-    background: rgb(73, 76, 84);
+    background: rgba(85, 181, 205, 0.8);
     color: white;
     border: none;
     font-family: "Yeon Sung", cursive;
     transition: all 0.4s;
     &:hover {
-      background: rgb(35, 37, 41);
+      background: rgba(68, 143, 163, 0.9);
       color: white;
       border: none;
     }

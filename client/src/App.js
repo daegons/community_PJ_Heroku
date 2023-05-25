@@ -66,41 +66,44 @@ function App() {
 
   return (
     //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
+
     <>
-      <div className={`landingpage ${tab === true ? "active" : ""}`}>
-        <video
-          // poster="./Component/assets/pictur_moldives.jpg"
-          src={cloud}
-          autoPlay
-          loop
-          muted
-          playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
-          className="video-bg"
-        />
-        <div className="bg-overlay">
-          <Heading onBlueRightHandler={onBlueRightHandler} tab={tab} />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            {/* mongoose를 통해 post, Reple 구현 */}
-            <Route path="/upload" element={<Upload />} />
-            <Route path="/post/:postNum" element={<PostArea />} />
-            <Route path="/edit/:postNum" element={<Edit />} />
-            {/* firebase Auth(인증)통해서 login구현 */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/mypage" element={<MyPage />} />
-            {/* 서브페이지 추가 */}
-            <Route path="/subpage" element={<SubPage />} />
-          </Routes>
+      <div style={{ height: "100%" }}>
+        <div className={`landingpage ${tab === true ? "active" : ""}`}>
+          <video
+            // poster="./Component/assets/pictur_moldives.jpg"
+            src={cloud}
+            autoPlay
+            loop
+            muted
+            playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
+            className="video-bg"
+          />
+          <div className="bg-overlay">
+            <Heading onBlueRightHandler={onBlueRightHandler} tab={tab} />
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              {/* mongoose를 통해 post, Reple 구현 */}
+              <Route path="/upload" element={<Upload />} />
+              <Route path="/post/:postNum" element={<PostArea />} />
+              <Route path="/edit/:postNum" element={<Edit />} />
+              {/* firebase Auth(인증)통해서 login구현 */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/mypage" element={<MyPage />} />
+              {/* 서브페이지 추가 */}
+              <Route path="/subpage" element={<SubPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-      {/* 
+        {/* 
         Add
         1. 검색기능 -(post관련)
         2. 유저프로필 이미지 & 이미지 변경
         3. 정렬 최신 / 인기 - (post관련)
       */}
+      </div>
     </>
   );
 }
