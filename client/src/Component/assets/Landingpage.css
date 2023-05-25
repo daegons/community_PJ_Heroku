@@ -1,6 +1,10 @@
 .landingpage {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
+=======
+  overflow: hidden;
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,5 +41,5 @@
 .bg-overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.039);
 }

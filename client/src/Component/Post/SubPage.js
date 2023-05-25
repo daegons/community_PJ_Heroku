@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 // import ReactPlayer from "react-player";
+=======
+import React from "react";
+import ReactPlayer from "react-player";
+import { SubPageDiv } from "../../Style/SubPageCSS";
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
 
 const SubPage = () => {
   useEffect(() => {
@@ -16,7 +22,11 @@ const SubPage = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div style={{ height: "100vh" }}>
+=======
+    <SubPageDiv>
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
       <h1>서브페이지 입니다.</h1>
       {/* <ReactPlayer
         url={"https://youtu.be/UxpjpxLi-Qg"}
@@ -27,8 +37,13 @@ const SubPage = () => {
         muted={true}
         controls={false}
         style={{ pointerEvents: "none" }}
+<<<<<<< HEAD
       /> */}
     </div>
+=======
+      />
+    </SubPageDiv>
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
   );
 };
 

@@ -5,7 +5,12 @@ const LoginDiv = styled.div`
 
   height: 100vh;
   width: 50%;
+<<<<<<< HEAD
 
+=======
+  height: 793px;
+  overflow: hidden;
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
   max-width: 360px;
   margin: 0 auto;
   padding-top: 8rem;
@@ -49,14 +54,26 @@ const LoginDiv = styled.div`
     }
   }
   @media (max-width: 756px) {
+<<<<<<< HEAD
     width: 65%;
     margin: 0 auto;
+=======
+    width: 90%;
+    height: 81px;
+    overflow: hidden;
+    margin-top: 3rem;
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
   }
 `;
 
 const MyPageDiv = styled.div`
   width: 100%;
+<<<<<<< HEAD
   height: 100vh;
+=======
+  height: 873px;
+  overflow: hidden;
+>>>>>>> cb23645b76c90af103639e7298830277eacd5398
   form {
     margin-top: 2rem;
     width: 50%;

@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 const GNBDiv = styled.div`
   padding-top: 1rem;
   /* padding-bottom: 1px; */
+  height: 100%;
+  overflow: hidden;
   max-width: 750px;
   margin: 0 auto !important;
 
@@ -48,6 +50,7 @@ const GNBDiv = styled.div`
 
   @media (max-width: 756px) {
     width: 85%;
+
     .search {
       width: auto;
       input {

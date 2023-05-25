@@ -1,9 +1,10 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const PostDiv = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
   max-width: 756px;
+  height: 100%;
   margin: 0 auto !important;
   @media (max-width: 756px) {
     width: 90%;
@@ -20,11 +21,11 @@ const SpinnerDiv = styled.div`
 `;
 
 const Post = styled.div`
-border-radius:15px;
+  border-radius: 15px;
   width: 100%;
   height: auto;
   background: white;
-  opacity:0.9;
+  opacity: 0.9;
   padding: 30px 20px;
   box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
     0px 15px 12px rgba(0, 0, 0, 0.1);
@@ -69,7 +70,7 @@ const BtnDiv = styled.div`
     background: rgb(73, 76, 84);
     color: white;
     border: none;
-    font-family: 'Yeon Sung', cursive;
+    font-family: "Yeon Sung", cursive;
     transition: all 0.4s;
     &:hover {
       background: rgb(35, 37, 41);
