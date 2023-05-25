@@ -17,13 +17,13 @@ const ListItem = styled.div`
   margin-top: 2vh;
   margin-bottom: 5vh;
   padding: 20px;
-  border-radius:15px;
-  opacity:0.9;
+  border-radius: 15px;
+  opacity: 0.9;
   box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
     0px 15px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-    &:hover{
-    transform:scale(1.02);
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.02);
   }
   .title {
     margin-bottom: 10px;

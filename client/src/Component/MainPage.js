@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import List from "../Component/Post/List";
 import axios from "axios";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
 import CountdownTimer from "./assets/CountdownTimer";
 import Loading from "./assets/Loading";
@@ -11,6 +9,7 @@ import Loading from "./assets/Loading";
 import searchIcon from "./assets/search2.svg";
 
 import more from "./assets/more.svg";
+import { Button } from "react-bootstrap";
 // import zumzum from "./assets/zumzum.svg";
 
 const MainPage = () => {
@@ -41,7 +40,6 @@ const MainPage = () => {
           //0 ~ 4번째 들고옴 5개
           setPostList([...postList, ...res.data.postList]);
           setSkip(skip + res.data.postList.length);
-
           if (res.data.postList.length < 5) {
             setLoadMore(false);
           }
@@ -71,6 +69,9 @@ const MainPage = () => {
           if (res.data.postList.length < 5) {
             setLoadMore(false);
           }
+          if (res.data.postList.length === 0) {
+            setLoadMore(false);
+          }
         }
       })
       .catch((err) => {
@@ -84,6 +85,11 @@ const MainPage = () => {
 
   const SearchHandler = () => {
     getPostList();
+  };
+
+  const listChangeHandler = (e) => {
+    e.preventDefault();
+    sort === "최신순" ? setSort("인기순") : setSort("최신순");
   };
 
   return (
@@ -111,20 +117,22 @@ const MainPage = () => {
                 <img src={searchIcon} alt="메인 아이콘" />
               </button>
             </div>
-            <DropdownButton
-              style={{ fontFamily: "'Yeon Sung', cursive" }}
-              // variant="outline-secondary"
-              // variant="white"
-              // variant="secondary"
+            <Button
+              // variant={sort}
+              style={{ fontFamily: "'Yeon Sung', cursive", width: "16%" }}
               title={sort}
+              onClick={listChangeHandler}
             >
+              {sort}
+            </Button>
+            {/* <DropdownButton>
               <Dropdown.Item onClick={() => setSort("최신순")}>
                 최신순
               </Dropdown.Item>
               <Dropdown.Item onClick={() => setSort("인기순")}>
                 인기순
               </Dropdown.Item>
-            </DropdownButton>
+            </DropdownButton> */}
           </GNBDiv>
           <List postList={postList} />
           {loadMore && (

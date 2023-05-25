@@ -49,7 +49,7 @@ const Detail = (props) => {
 
   useEffect(() => {
     document.body.style.cssText = `
-      position: fixed; 
+      position: fixed;
       top: -${window.scrollY}px;
       overflow-y: hidden;
       width: 100%;`;

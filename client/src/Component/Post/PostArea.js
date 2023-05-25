@@ -33,7 +33,7 @@ const PostArea = () => {
   //646316440e622de48df366ec 이런식으로 정상으로 나옴
   // console.log(postDetil._id);
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       {loaded ? (
         <>
           <Detail postDetil={postDetil} />

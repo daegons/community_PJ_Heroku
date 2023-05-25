@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 const FooterDiv = styled.div`
+  position: fixed;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;

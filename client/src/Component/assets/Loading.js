@@ -8,7 +8,7 @@ const Loading = () => {
   return (
     <Background>
       <img src={Spiner} alt="로딩중" />
-      <LoadingText>Loading..</LoadingText>
+      <LoadingText>로딩중..</LoadingText>
     </Background>
   );
 };

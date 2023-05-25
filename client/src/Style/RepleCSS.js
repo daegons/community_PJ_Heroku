@@ -10,7 +10,7 @@ const RepleAreaDiv = styled.div`
 `;
 
 const RepleUploadDiv = styled.div`
-opacity:0.8;
+  opacity: 0.8;
   width: 100%;
 
   form {
@@ -65,9 +65,9 @@ const RepleListDiv = styled.div`
 `;
 
 const RepleContentDiv = styled.div`
-border-radius:15px;
-background:white;
-opacity:0.8;
+  border-radius: 15px;
+  background: white;
+  opacity: 0.8;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.03), 0px 7.5px 6px rgba(0, 0, 0, 0.1);
   padding: 20px 10px;
   margin-bottom: 10px;

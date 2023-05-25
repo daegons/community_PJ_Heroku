@@ -25,6 +25,7 @@ import "./Component/assets/Landingpage.css";
 // import tv from "./Component/assets/tv.mp4";
 import cloud from "./Component/assets/cloud.mp4";
 // import moldives from "./Component/assets/moldives.mp4";
+
 import Footer from "./Component/Post/Footer";
 import SubPage from "./Component/Post/SubPage";
 
@@ -68,7 +69,7 @@ function App() {
     //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
 
     <>
-      <div style={{ height: "100%" }}>
+      <div style={{ height: "100vh" }}>
         <div className={`landingpage ${tab === true ? "active" : ""}`}>
           <video
             // poster="./Component/assets/pictur_moldives.jpg"
@@ -79,7 +80,10 @@ function App() {
             playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
             className="video-bg"
           />
-          <div className="bg-overlay">
+          <div
+            className="bg-overlay"
+            style={{ height: "100vh", overflow: "auto" }}
+          >
             <Heading onBlueRightHandler={onBlueRightHandler} tab={tab} />
             <Routes>
               <Route path="/" element={<MainPage />} />
