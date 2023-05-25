@@ -1,6 +1,7 @@
 .landingpage {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +28,7 @@
 
 .video-bg {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -37,5 +38,5 @@
 .bg-overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.039);
 }

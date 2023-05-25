@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 const LoginDiv = styled.div`
   width: 50%;
+  height: 793px;
+  overflow: hidden;
   max-width: 360px;
   margin: 0 auto;
   margin-top: 5rem;
@@ -45,13 +47,16 @@ const LoginDiv = styled.div`
   }
   @media (max-width: 756px) {
     width: 90%;
+    height: 81px;
+    overflow: hidden;
     margin-top: 3rem;
   }
 `;
 
 const MyPageDiv = styled.div`
   width: 100%;
-  height: auto;
+  height: 873px;
+  overflow: hidden;
   form {
     margin-top: 2rem;
     width: 50%;

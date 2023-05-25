@@ -1,13 +1,13 @@
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from "react-router-dom";
 //아래 두개 스피너
 // import Loading from './../assets/Spinner';
-import { BtnDiv, Post, PostDiv } from '../../Style/PostDetailCSS';
-import { useSelector } from 'react-redux';
-import Avatar from 'react-avatar';
-import axios from 'axios';
+import { BtnDiv, Post, PostDiv } from "../../Style/PostDetailCSS";
+import { useSelector } from "react-redux";
+import Avatar from "react-avatar";
+import axios from "axios";
 
-import moment from 'moment';
-import 'moment/locale/ko';
+import moment from "moment";
+import "moment/locale/ko";
 
 const Detail = (props) => {
   const navigate = useNavigate();
@@ -18,29 +18,29 @@ const Detail = (props) => {
 
   const SetTime = (a, b) => {
     if (a !== b) {
-      return moment(b).format('YYYY년 MMMM Do hh:mm a') + '(수정됨)';
+      return moment(b).format("YYYY년 MMMM Do hh:mm a") + "(수정됨)";
     } else {
-      return moment(a).format('YYYY년 MMMM Do hh:mm a');
+      return moment(a).format("YYYY년 MMMM Do hh:mm a");
     }
   };
 
   const deleteHandler = () => {
-    if (window.confirm('정말로 삭제하시겠습니까?')) {
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
       // console.log(params.postNum); //post id값 ex)1
       let body = {
         //let body =
         postNum: params.postNum,
       };
       axios
-        .post('/api/post/delete', body)
+        .post("/api/post/delete", body)
         .then((res) => {
           if (res.data.success) {
-            alert('게시글이 삭제되었습니다.');
-            navigate('/');
+            alert("게시글이 삭제되었습니다.");
+            navigate("/");
           }
         })
         .catch((err) => {
-          alert('게시글이 삭제 실패되었습니다.');
+          alert("게시글이 삭제 실패되었습니다.");
         });
     }
   };
@@ -52,8 +52,8 @@ const Detail = (props) => {
         <div className="author">
           <Avatar
             style={{
-              background: 'rgb(232, 232, 232)',
-              border: '1px solid rgb(210, 210, 210)',
+              background: "rgb(232, 232, 232)",
+              border: "1px solid rgb(210, 210, 210)",
             }}
             size="40"
             round={true}
@@ -70,7 +70,7 @@ const Detail = (props) => {
             // src={`http://localhost:5000/${postDetil.image}`}
             src={props.postDetil.image}
             alt="이미지"
-            style={{ width: '100%', height: 'auto' }}
+            style={{ width: "100%", height: "auto" }}
           />
         ) : null}
         <p>{props.postDetil.content}</p>

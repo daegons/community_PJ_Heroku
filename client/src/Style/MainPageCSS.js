@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 const GNBDiv = styled.div`
   padding-top: 1rem;
   /* padding-bottom: 1px; */
+  height: 100%;
+  overflow: hidden;
   max-width: 750px;
   margin: 0 auto !important;
 
@@ -42,12 +44,13 @@ const GNBDiv = styled.div`
       }
     }
     img {
-      width:20px;
+      width: 20px;
     }
   }
 
   @media (max-width: 756px) {
     width: 85%;
+
     .search {
       width: auto;
       input {
@@ -73,7 +76,5 @@ const FooterDiv = styled.div`
     font-weight: bold;
   }
 `;
-
-
 
 export { GNBDiv, FooterDiv };
