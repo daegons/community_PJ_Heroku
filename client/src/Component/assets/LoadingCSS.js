@@ -7,7 +7,6 @@ export const Background = styled.div`
   position: fixed;
   text-align: center;
   top: 43%; */
-
   position: absolute;
   left: 50%;
   top: 50%;

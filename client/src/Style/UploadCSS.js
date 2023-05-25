@@ -3,31 +3,15 @@ import styled from "@emotion/styled";
 font-family: "Nanum Pen Script", cursive; 가장 아래 왼쪽부터 속성을 따름 */
 const UploadDiv = styled.div`
   width: 100%;
-<<<<<<< HEAD
   height: 100vh;
   padding-top: 5rem;
   /* margin-bottom: 1rem; */
-=======
-  height: 793px;
-  overflow: hidden;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-  @media (max-width: 756px) {
-    height: 782px;
-    overflow: hidden;
-  }
->>>>>>> cb23645b76c90af103639e7298830277eacd5398
 `;
 
 const UploadForm = styled.form`
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   width: 40%;
-=======
-  max-width: 45%;
->>>>>>> cb23645b76c90af103639e7298830277eacd5398
   margin: 0 auto;
   opacity: 0.8;
   #title {
@@ -91,21 +75,13 @@ const UploadButtonDiv = styled.div`
   button {
     border-radius: 6px;
     padding: 5px 10px;
-<<<<<<< HEAD
     background: rgba(85, 181, 205, 0.8);
-=======
-    background: rgba(55, 124, 176, 0.9);
->>>>>>> cb23645b76c90af103639e7298830277eacd5398
     color: white;
     border: none;
     font-family: "Yeon Sung", cursive;
     transition: all 0.4s;
     &:hover {
-<<<<<<< HEAD
       background: rgba(68, 143, 163, 0.9);
-=======
-      background: rgb(37, 81, 114);
->>>>>>> cb23645b76c90af103639e7298830277eacd5398
       color: white;
       border: none;
     }

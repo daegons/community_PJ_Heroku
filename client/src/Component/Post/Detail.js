@@ -8,11 +8,8 @@ import axios from "axios";
 
 import moment from "moment";
 import "moment/locale/ko";
-<<<<<<< HEAD
 import { useEffect } from "react";
 import Footer from "./Footer";
-=======
->>>>>>> cb23645b76c90af103639e7298830277eacd5398
 
 const Detail = (props) => {
   const navigate = useNavigate();
