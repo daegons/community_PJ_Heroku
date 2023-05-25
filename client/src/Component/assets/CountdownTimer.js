@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card";
 import { IoIosMegaphone } from "react-icons/io";
 import { useSelector } from "react-redux";
 
-const CountdownTimer = ({initialCountdown}) => {
+const CountdownTimer = ({ initialCountdown }) => {
   const [countdown, setCountdown] = useState(initialCountdown);
 
-    const user = useSelector((state) => state.user);
-    // console.log(user.uid);
+  const user = useSelector((state) => state.user);
+  // console.log(user.uid);
 
   useEffect(() => {
     if (countdown > 0) {
@@ -19,29 +19,32 @@ const CountdownTimer = ({initialCountdown}) => {
     }
   }, [countdown]);
 
-
   return (
-    <div style={{padding:"30px 0 0 0"}}>
-      {countdown > 0 && user.uid ?  (
+    <>
+      {countdown > 0 && user.uid ? (
         <Card
           bg="light"
           style={{
             width: "37%",
-            height: "90px",
+            height: "85px",
             background: "black",
             margin: "auto",
+            marginTop: "70px",
+            marginBottom: "-60px",
             fontFamily: "'Yeon Sung', cursive",
           }}
         >
-          <Card.Header style={{ background: "rgba(37, 83, 210, 0.278)" }}>
-           <IoIosMegaphone/> 공지  
+          <Card.Header style={{ background: "rgba(37, 83, 210, 0.6)" }}>
+            <IoIosMegaphone /> 공지
           </Card.Header>
           <Card.Body style={{ background: "rgba(119, 141, 202, 0.164)" }}>
             <Card.Text>비방 욕설 영구 밴</Card.Text>
           </Card.Body>
         </Card>
-      ) : ""}
-    </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

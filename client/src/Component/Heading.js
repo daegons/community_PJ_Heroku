@@ -34,7 +34,13 @@ const Heading = (props) => {
   };
   return (
     <Navbar
-      style={{ backgroundColor: "rgba(255, 255, 255, 0.7)" }}
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        position: "fixed",
+        width: "100%",
+        height: "50px",
+        zIndex: "2",
+      }}
       expand="md"
       variant="white"
     >

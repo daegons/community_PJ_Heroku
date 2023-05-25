@@ -2,10 +2,11 @@ import styled from "@emotion/styled";
 
 const ListDiv = styled.div`
   padding-bottom: 1rem;
-  max-width: 756px;
+  max-width: 650px;
   margin: 0 auto !important;
+
   @media (max-width: 756px) {
-    width: 85%;
+    width: 82%;
   }
 `;
 

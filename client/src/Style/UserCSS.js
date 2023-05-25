@@ -1,10 +1,47 @@
 import styled from "@emotion/styled";
 
+const MyPageDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  form {
+    height: 100vh;
+    width: 100vh;
+    margin-top: 2rem;
+    width: 50%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: green; */
+    label {
+      margin-bottom: 2rem;
+      input {
+        display: none;
+      }
+    }
+    button {
+      border-radius: 15px;
+      padding: 5px 10px;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      margin-top: 10px;
+      &:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+    }
+  }
+`;
+
 const LoginDiv = styled.div`
   /* background: white; */
 
-  height: 100vh;
-  width: 50%;
+  /* height: 100%;
+  width: 50%; */
   max-width: 360px;
   margin: 0 auto;
   padding-top: 8rem;
@@ -50,38 +87,6 @@ const LoginDiv = styled.div`
   @media (max-width: 756px) {
     width: 65%;
     margin: 0 auto;
-  }
-`;
-
-const MyPageDiv = styled.div`
-  width: 100%;
-  height: 100vh;
-  form {
-    margin-top: 2rem;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    label {
-      margin-bottom: 2rem;
-      input {
-        display: none;
-      }
-    }
-    button {
-      border-radius: 15px;
-      padding: 5px 10px;
-      background-color: black;
-      color: white;
-      border: 1px solid black;
-      margin-top: 10px;
-      &:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-      }
-    }
   }
 `;
 

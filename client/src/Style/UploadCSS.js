@@ -2,10 +2,14 @@ import styled from "@emotion/styled";
 /* font-family: "Yeon Sung", cursive;
 font-family: "Nanum Pen Script", cursive; 가장 아래 왼쪽부터 속성을 따름 */
 const UploadDiv = styled.div`
-  width: 100%;
-  height: 100vh;
-  padding-top: 5rem;
+  /* width: 100%; */
+  height: 100%;
+  /* padding-top: 10rem; */
   /* margin-bottom: 1rem; */
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const UploadForm = styled.form`
@@ -26,7 +30,8 @@ const UploadForm = styled.form`
     }
   }
   @media (max-width: 756px) {
-    width: 70%;
+    width: 65%;
+    /* margin: 20px 0; */
   }
 
   textarea {
@@ -64,7 +69,7 @@ const UploadForm = styled.form`
   }
   @media (max-width: 756px) {
     max-width: 85%;
-    /* height: 500px; */
+    /* height: 20vh; */
   }
 `;
 

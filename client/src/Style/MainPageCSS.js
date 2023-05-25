@@ -3,9 +3,8 @@ import styled from "@emotion/styled";
 const GNBDiv = styled.div`
   padding-top: 1rem;
   /* padding-bottom: 1px; */
-  height: 100%;
-  overflow: hidden;
-  max-width: 750px;
+  padding-top: 100px;
+  max-width: 650px;
   margin: 0 auto !important;
 
   display: flex;

@@ -61,30 +61,32 @@ const MyPage = () => {
     });
   };
 
-  useEffect(() => {
-    document.body.style.cssText = `
-      position: fixed;
-      top: -${window.scrollY}px;
-      overflow-y: hidden;
-      width: 100%;`;
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = "";
-      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.cssText = `
+  //     position: fixed;
+  //     top: -${window.scrollY}px;
+  //     overflow-y: hidden;
+  //     width: 100%;`;
+  //   return () => {
+  //     const scrollY = document.body.style.top;
+  //     document.body.style.cssText = "";
+  //     window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+  //   };
+  // }, []);
 
   return (
     <MyPageDiv>
       <form
-        style={{
-          width: "50%",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "2rem",
-        }}
+        style={
+          {
+            // width: "50%",
+            // margin: "0 auto",
+            // display: "flex",
+            // flexDirection: "column",
+            // alignItems: "center",
+            // marginTop: "2rem",
+          }
+        }
       >
         <label>
           <input

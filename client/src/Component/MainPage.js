@@ -119,7 +119,7 @@ const MainPage = () => {
             </div>
             <Button
               // variant={sort}
-              style={{ fontFamily: "'Yeon Sung', cursive", width: "16%" }}
+              style={{ fontFamily: "'Yeon Sung', cursive", width: "20%" }}
               title={sort}
               onClick={listChangeHandler}
             >
@@ -151,9 +151,7 @@ const MainPage = () => {
           )}
         </>
       ) : (
-        <div style={{ height: "100vh" }}>
-          <Loading />
-        </div>
+        <Loading />
       )}
     </div>
   );
