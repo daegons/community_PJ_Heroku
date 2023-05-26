@@ -28,10 +28,10 @@ const SubPage = () => {
       <motion.div
         drag
         dragConstraints={{
-          top: -350,
+          top: -260,
           left: -150,
           right: 150,
-          bottom: 350,
+          bottom: 250,
         }}
         style={{
           // background: "white",
@@ -40,6 +40,7 @@ const SubPage = () => {
           // borderRadius: "50%",
           // overflow: "hidden",
           position: "absolute",
+          cursor: "grab",
         }}
       >
         <img src={ball} alt="축구공 이미지" style={{ height: "100%" }} />
