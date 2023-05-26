@@ -4,6 +4,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ImageUpload from "./ImageUpload";
 import { useSelector } from "react-redux";
+
+//애니메이션
+import { motion } from "framer-motion";
+
 import Footer from "./Footer";
 const Upload = () => {
   const [title, setTitle] = useState("");
@@ -69,7 +73,26 @@ const Upload = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <UploadButtonDiv>
-          <button onClick={onSubmit}>제출</button>
+          {/* <button onClick={onSubmit}>등록</button> */}
+          {/* <motion.div
+            className={"square"}
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              // rotate: [0, 0, 270, 270, 0],
+            }}
+            onClick={() => {}}
+          >
+            로그인
+          </motion.div> */}
+          <motion.button
+            className={"square"}
+            whileHover={{
+              scale: [1.3, 1, 1, 1, 1],
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
+            등록
+          </motion.button>
         </UploadButtonDiv>
       </UploadForm>
     </UploadDiv>

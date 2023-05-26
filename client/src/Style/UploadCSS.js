@@ -22,7 +22,7 @@ const UploadForm = styled.form`
     border-radius: 6px;
     border: 1px solid #c6c6c6;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 7px;
     font-family: "Nanum Pen Script";
     &:active,
     &:focus {
@@ -37,7 +37,7 @@ const UploadForm = styled.form`
   textarea {
     min-height: 350px;
     resize: none;
-    border-radius: 6px;
+    border-radius: 15px;
     border: 1px solid #c6c6c6;
     padding: 10px;
     font-family: "Nanum Pen Script";
@@ -61,30 +61,39 @@ const UploadForm = styled.form`
       margin-bottom: 87px; */
       box-shadow: inset 0px 0px 5px whitesmoke;
     }
+    @media (max-width: 756px) {
+      min-height: 280px;
+      /* height: 20vh; */
+    }
   }
   label {
     font-weight: bold;
     margin-top: 10px;
     font-family: "Yeon Sung", cursive;
   }
-  @media (max-width: 756px) {
-    max-width: 85%;
-    /* height: 20vh; */
-  }
 `;
 
 const UploadButtonDiv = styled.div`
+  /* background: green; */
+
+  width: 100%;
   margin-top: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   button {
-    border-radius: 6px;
+    height: 20px;
+    width: 100%;
+    border-radius: 15px;
     padding: 5px 10px;
     background: rgba(85, 181, 205, 0.8);
     color: white;
     border: none;
     font-family: "Yeon Sung", cursive;
     transition: all 0.4s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
       background: rgba(68, 143, 163, 0.9);
       color: white;
@@ -102,6 +111,42 @@ const UploadButtonDiv = styled.div`
         color: white;
         border: none;
       }
+    }
+    @media (max-width: 756px) {
+      width: 95%;
+    }
+  }
+  .square {
+    height: 20px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background: rgba(85, 181, 205, 0.8);
+    color: white;
+    border: none;
+    font-family: "Yeon Sung", cursive;
+    transition: all 0.4s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    &:hover {
+      background: rgba(68, 143, 163, 0.9);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    @media (max-width: 756px) {
+      width: 95%;
     }
   }
 `;
