@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { UploadDiv, UploadForm, UploadButtonDiv } from "../../Style/UploadCSS";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +8,13 @@ import { useSelector } from "react-redux";
 //애니메이션
 import { motion } from "framer-motion";
 
-import Footer from "./Footer";
 const Upload = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
+
+  const titleRef = useRef();
+  const contentRef = useRef();
 
   let navigate = useNavigate();
   const user = useSelector((state) => state.user);
@@ -29,9 +31,13 @@ const Upload = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (title === "" || content === "") {
-      return alert("모든 항목을 채워주세요");
+    if (title === "") {
+      // return alert("모든 항목을 채워주세요");
+      return (titleRef.current.placeholder = "빈 칸 확인해주세요");
+    } else if (content === "") {
+      return (contentRef.current.placeholder = "빈 칸 확인해주세요");
     }
+
     let body = {
       title: title,
       content: content,
@@ -63,6 +69,7 @@ const Upload = () => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          ref={titleRef}
         />
         <ImageUpload setImage={setImage} />
         <label htmlFor="content">내용</label>
@@ -71,19 +78,9 @@ const Upload = () => {
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          ref={contentRef}
         />
         <UploadButtonDiv>
-          {/* <button onClick={onSubmit}>등록</button> */}
-          {/* <motion.div
-            className={"square"}
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              // rotate: [0, 0, 270, 270, 0],
-            }}
-            onClick={() => {}}
-          >
-            로그인
-          </motion.div> */}
           <motion.button
             className={"square"}
             whileHover={{ scaleX: 1.2 }}
