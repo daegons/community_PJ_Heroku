@@ -7,7 +7,7 @@ import Spiner from "./Ripple.svg";
 const Loading = () => {
   return (
     <Background>
-      <img src={Spiner} alt="로딩중" width="15%" />
+      <img src={Spiner} alt="로딩중" width="300vh" />
       <LoadingText>로딩중..</LoadingText>
     </Background>
   );

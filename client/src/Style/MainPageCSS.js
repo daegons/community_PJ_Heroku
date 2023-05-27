@@ -68,8 +68,8 @@ const FooterDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  button {
-    width: 30%;
+  .square {
+    width: 21%;
     height: 15px;
     display: flex;
     text-align: center;
@@ -78,8 +78,11 @@ const FooterDiv = styled.div`
     border-radius: 15px;
     /* padding: 5px 10px; */
     font-weight: bold;
+    margin-bottom: 10vh;
+    border: none;
+    background: rgba(61, 149, 189, 0.579);
     @media (max-width: 756px) {
-      width: 80%;
+      width: 65%;
     }
   }
 `;

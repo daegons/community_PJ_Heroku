@@ -86,10 +86,8 @@ const Upload = () => {
           </motion.div> */}
           <motion.button
             className={"square"}
-            whileHover={{
-              scale: [1.3, 1, 1, 1, 1],
-            }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scaleX: 1.2 }}
+            onClick={onSubmit}
           >
             등록
           </motion.button>

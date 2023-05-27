@@ -25,16 +25,15 @@ const CountdownTimer = ({ initialCountdown }) => {
         <Card
           bg="light"
           style={{
-            width: "37%",
+            width: "55vh",
             height: "85px",
-            background: "black",
             margin: "auto",
             marginTop: "70px",
             marginBottom: "-60px",
             fontFamily: "'Yeon Sung', cursive",
           }}
         >
-          <Card.Header style={{ background: "rgba(37, 83, 210, 0.6)" }}>
+          <Card.Header style={{ background: "rgba(37, 83, 210, 0.8)" }}>
             <IoIosMegaphone /> 공지
           </Card.Header>
           <Card.Body style={{ background: "rgba(119, 141, 202, 0.164)" }}>

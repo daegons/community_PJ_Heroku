@@ -12,6 +12,8 @@ import more from "./assets/more.svg";
 import { Button } from "react-bootstrap";
 // import zumzum from "./assets/zumzum.svg";
 
+import { motion } from "framer-motion";
+
 const MainPage = () => {
   const [postList, setPostList] = useState([]);
   const [sort, setSort] = useState("최신순");
@@ -93,7 +95,7 @@ const MainPage = () => {
   };
 
   return (
-    <div>
+    <>
       {loading ? (
         <>
           {/* 카운트 공지 */}
@@ -137,7 +139,7 @@ const MainPage = () => {
           <List postList={postList} />
           {loadMore && (
             <FooterDiv>
-              <button
+              {/* <button
                 style={{
                   marginBottom: "10vh",
                   border: "none",
@@ -146,14 +148,21 @@ const MainPage = () => {
                 onClick={() => getPostLoadMore()}
               >
                 <img src={more} alt="더보기" />
-              </button>
+              </button> */}
+              <motion.button
+                className="square"
+                whileHover={{ scaleX: 1.2 }}
+                onClick={() => getPostLoadMore()}
+              >
+                <img src={more} alt="더보기" />
+              </motion.button>
             </FooterDiv>
           )}
         </>
       ) : (
         <Loading />
       )}
-    </div>
+    </>
   );
 };
 

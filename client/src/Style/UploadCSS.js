@@ -118,14 +118,14 @@ const UploadButtonDiv = styled.div`
   }
   .square {
     height: 20px;
-    width: 100%;
+    width: 82%;
     border-radius: 15px;
     padding: 5px 10px;
     background: rgba(85, 181, 205, 0.8);
     color: white;
     border: none;
     font-family: "Yeon Sung", cursive;
-    transition: all 0.4s;
+    transition: all 0.2s;
 
     display: flex;
     justify-content: center;
@@ -146,7 +146,7 @@ const UploadButtonDiv = styled.div`
       cursor: pointer;
     }
     @media (max-width: 756px) {
-      width: 95%;
+      width: 80%;
     }
   }
 `;
