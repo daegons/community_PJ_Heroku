@@ -10,12 +10,14 @@ const setUpload = require("../Util/upload");
 
 router.post("/submit", (req, res) => {
   //temp에 title,content 들어있음..
+  // console.log(req.body);
   let temp = {
     title: req.body.title,
     content: req.body.content,
     image: req.body.image,
   };
-
+  //findOne({ 중괄호로 조건부여 가능 })
+  //find쓰면 undifined 뜸..
   Counter.findOne({ name: "counter" })
     .exec()
     .then((counter) => {
@@ -26,6 +28,7 @@ router.post("/submit", (req, res) => {
           temp.author = userInfo._id;
           const CommunityPost = new Post(temp);
           CommunityPost.save().then(() => {
+            //counter 1증가
             Counter.updateOne(
               { name: "counter" },
               { $inc: { postNum: 1 } }
@@ -51,6 +54,7 @@ router.post("/list", (req, res) => {
     sort.repleNum = -1;
   }
 
+  //몽고DB에서 doc찾는 방법은 find()
   Post.find({
     $or: [
       { title: { $regex: req.body.search } },
@@ -63,6 +67,7 @@ router.post("/list", (req, res) => {
     .limit(5) //한번에 찾을 doc의 숫자
     .exec()
     .then((doc) => {
+      //응답으로 postList: doc로  클라 쪽으로 보냄
       res.status(200).json({ success: true, postList: doc });
     })
     .catch((err) => {
@@ -73,6 +78,7 @@ router.post("/list", (req, res) => {
 
 router.post("/detail", (req, res) => {
   // console.log(req.body.postNum); //post id 출력
+  // 스트링으로 넘어오기때문에 Number로 감싸줌
   Post.findOne({ postNum: Number(req.body.postNum) })
     .populate("author")
     .exec()
@@ -90,8 +96,10 @@ router.post("/edit", (req, res) => {
   let temp = {
     title: req.body.title,
     content: req.body.content,
+    image: req.body.image,
   };
   // console.log(req.body.postNum); //post id 출력
+  //쿼리문의 $set을 사용해서 수정된 정보로 교체
   Post.updateOne({ postNum: Number(req.body.postNum) }, { $set: temp })
     .exec()
     .then(() => {
@@ -104,40 +112,16 @@ router.post("/edit", (req, res) => {
 
 router.post("/delete", (req, res) => {
   // console.log(req.body.postNum); //post id 출력
+  //몽고DB에서 하나 찾아서 삭제하는 deleteOne
   Post.deleteOne({ postNum: Number(req.body.postNum) })
     .exec()
     .then(() => {
       res.status(200).json({ success: true });
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(400).json({ success: false });
     });
 });
-
-/*
-//multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'image/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
-  },
-});
-//
-
-const upload = multer({ storage: storage }).single('file');
-
-router.post('/image/upload', (req, res) => {
-  upload(req, res, (err) => {
-    if (err) {
-      res.status(400).json({ success: false });
-    } else {
-      res.status(200).json({ success: true, filePath: res.req.file.path });
-    }
-  });
-});
-*/
 
 router.post(
   "/image/upload",

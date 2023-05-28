@@ -4,8 +4,9 @@ const PostDiv = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
   max-width: 756px;
-  height: 100%;
+  padding-top: 150px;
   margin: 0 auto !important;
+
   @media (max-width: 756px) {
     width: 90%;
   }

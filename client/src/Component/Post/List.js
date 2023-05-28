@@ -6,8 +6,6 @@ import moment from "moment";
 import "moment/locale/ko";
 
 const List = (props) => {
-  // console.log(postList);
-
   const SetTime = (a, b) => {
     if (a !== b) {
       return moment(b).format("YYYY년 MMMM Do h:mm a") + " (수정완료)";
@@ -15,7 +13,7 @@ const List = (props) => {
       return moment(a).format("YYYY년 MMMM Do h:mm a");
     }
   };
-
+  // console.log(props.postList);
   return (
     <ListDiv>
       {props.postList.map((post, i) => {

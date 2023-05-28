@@ -8,12 +8,12 @@ const Edit = () => {
   const [postDetil, setPostDetail] = useState({});
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  // const [Image, setImage] = useState("");
-
+  const [Image, setImage] = useState("");
+  // console.log(postDetil);
   //현재 페이지 id 때문..
   const params = useParams();
   const navigate = useNavigate();
-
+  // console.log(params);
   useEffect(() => {
     const body = {
       postNum: params.postNum,
@@ -33,10 +33,10 @@ const Edit = () => {
   useEffect(() => {
     setTitle(postDetil.title);
     setContent(postDetil.content);
-    // setImage(postDetil.image);
+    setImage(postDetil.image);
   }, [postDetil]);
 
-  const onSubmit = (e) => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
     if (title === "" || content === "") {
       return alert("위 아래 위위 아래 채워주세요");
@@ -44,8 +44,9 @@ const Edit = () => {
     let body = {
       title: title,
       content: content,
+      //server측에서도 어떤 글이 수정되는지 알아야 하기때문에 postNum추가
       postNum: params.postNum,
-      // image: Image,
+      image: Image,
     };
 
     axios
@@ -63,7 +64,7 @@ const Edit = () => {
       });
   };
 
-  const onBack = (e) => {
+  const onBackHandler = (e) => {
     e.preventDefault();
     navigate(-1);
   };
@@ -78,7 +79,7 @@ const Edit = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <ImageUpload />
+        <ImageUpload setImage={setImage} />
         <label htmlFor="content">내용</label>
         <textarea
           id="content"
@@ -87,10 +88,10 @@ const Edit = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <UploadButtonDiv>
-          <button onClick={onBack} className="cancel">
+          <button onClick={onBackHandler} className="cancel">
             취소
           </button>
-          <button onClick={onSubmit}>제출</button>
+          <button onClick={onSubmitHandler}>제출</button>
         </UploadButtonDiv>
       </UploadForm>
     </UploadDiv>

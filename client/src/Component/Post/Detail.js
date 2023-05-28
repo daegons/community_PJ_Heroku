@@ -8,13 +8,12 @@ import axios from "axios";
 
 import moment from "moment";
 import "moment/locale/ko";
-import { useEffect } from "react";
-import Footer from "./Footer";
 
 const Detail = (props) => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   // console.log(user.photoURL);
+
   //현재 페이지 id 때문..
   const params = useParams();
 
@@ -27,7 +26,7 @@ const Detail = (props) => {
   };
 
   const deleteHandler = () => {
-    if (window.confirm("정말로 삭제하시겠습니까?")) {
+    if (window.confirm("삭제하시겠습니까?")) {
       // console.log(params.postNum); //post id값 ex)1
       let body = {
         //let body =
@@ -46,19 +45,6 @@ const Detail = (props) => {
         });
     }
   };
-
-  // useEffect(() => {
-  //   document.body.style.cssText = `
-  //     position: fixed;
-  //     top: -${window.scrollY}px;
-  //     overflow-y: hidden;
-  //     width: 100%;`;
-  //   return () => {
-  //     const scrollY = document.body.style.top;
-  //     document.body.style.cssText = "";
-  //     window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-  //   };
-  // }, []);
 
   return (
     <PostDiv>
@@ -85,7 +71,7 @@ const Detail = (props) => {
             // src={`http://localhost:5000/${postDetil.image}`}
             src={props.postDetil.image}
             alt="이미지"
-            style={{ width: "100%", height: "auto" }}
+            style={{ height: "auto", width: "100%", borderRadius: "15px" }}
           />
         ) : null}
         <p>{props.postDetil.content}</p>

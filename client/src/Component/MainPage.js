@@ -15,6 +15,7 @@ import { Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 const MainPage = () => {
+  //배열로 받아야해서 ([])넣어줌
   const [postList, setPostList] = useState([]);
   const [sort, setSort] = useState("최신순");
   const [search, setSearch] = useState("");
@@ -22,7 +23,7 @@ const MainPage = () => {
   const [loadMore, setLoadMore] = useState(true);
 
   const [loading, setLoading] = useState(false);
-
+  // console.log(postList);
   setTimeout(() => {
     setLoading(true);
   }, 1000);

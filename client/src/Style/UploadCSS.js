@@ -101,13 +101,13 @@ const UploadButtonDiv = styled.div`
     }
     &.cancel {
       margin-right: 10px;
-      border-radius: 6px;
+      border-radius: 15px;
       padding: 5px 10px;
-      background: rgb(73, 76, 84);
+      background: rgba(85, 181, 205, 0.8);
       color: white;
       border: none;
       &:hover {
-        background: rgb(35, 37, 41);
+        background: rgba(85, 100, 250, 0.5);
         color: white;
         border: none;
       }

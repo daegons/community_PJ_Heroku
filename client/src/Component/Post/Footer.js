@@ -7,12 +7,10 @@ const Footer = () => {
     return year;
   };
 
-  console.log(nowYear());
-
   return (
     <FooterDiv>
       <footer>
-        Copyright &copy; <span>{nowYear()}</span>
+        Copyright &copy; <span>대곤_{nowYear()}</span>
       </footer>
     </FooterDiv>
   );

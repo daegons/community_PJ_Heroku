@@ -13,14 +13,14 @@ const RepleList = (props) => {
 
     axios.post("/api/reple/getReple", body).then((res) => {
       if (res.data.success) {
-        console.log(res.data);
+        // console.log(res.data);
         setRepleList(res.data.repleList);
         // setRepleList([...res.data.repleList]);
       }
     });
   }, []);
 
-  console.log(repleList);
+  // console.log(repleList);
   return (
     <RepleListDiv>
       {repleList.map((list, i) => {

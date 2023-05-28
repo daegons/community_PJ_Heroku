@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Form } from "react-bootstrap";
 import axios from "axios";
 
@@ -9,7 +8,6 @@ const ImageUpload = (props) => {
   3.저장한 이미지의 경로를 다시 클라에게 전송
   4.경로를 받아서 post model에 저장
   */
-
   const FileUpload = (e) => {
     // console.log(e.target.files[0]);
     var formData = new FormData(); //{}
@@ -25,19 +23,6 @@ const ImageUpload = (props) => {
       })
       .catch(() => {});
   };
-
-  useEffect(() => {
-    document.body.style.cssText = `
-      position: fixed; 
-      top: -${window.scrollY}px;
-      overflow-y: hidden;
-      width: 100%;`;
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = "";
-      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-    };
-  }, []);
 
   return (
     <div style={{ fontFamily: "Yeon Sung" }}>

@@ -1,12 +1,12 @@
-const AWS = require('aws-sdk');
-const multer = require('multer');
-const multerS3 = require('multer-s3');
-const path = require('path');
+const AWS = require("aws-sdk");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const path = require("path");
 
-const endpoint = new AWS.Endpoint('https://kr.object.ncloudstorage.com');
-const region = 'kr-standard';
+const endpoint = new AWS.Endpoint("https://kr.object.ncloudstorage.com");
+const region = "kr-standard";
 
-const config = require('../config/key');
+const config = require("../config/key");
 
 //네이버 클라우드 카피
 const S3 = new AWS.S3({
@@ -25,14 +25,14 @@ function setUpload(bucket) {
       s3: S3,
       bucket: bucket,
       //acl 보안규칙(공개범위?)
-      acl: 'public-read-write',
+      acl: "public-read-write",
       key: function (req, file, cb) {
         //extname()확장자명만 제거해서 파일 이름만 남겨줌
         let extension = path.extname(file.originalname);
         cb(null, Date.now().toString() + extension);
       },
     }),
-  }).single('file');
+  }).single("file");
   return upload;
 }
 
