@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginDiv } from "../../Style/UserCSS";
 
@@ -17,7 +17,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const RegisterFunc = async (e) => {
+  const RegisterHandler = async (e) => {
     // setLoaded(true);
     e.preventDefault();
     if (!nameCheck) {
@@ -34,8 +34,10 @@ const Register = () => {
     const createdUser = await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password);
-
+    console.log(createdUser);
     await createdUser.user.updateProfile({
+      //updateProfile을 통해서 firbase에서 제공하는 유저 정보를 설정 할 수 있음
+      //displayName은 firbase 자체 기능 : 값 설정 가능
       displayName: name,
       //user 프로필 이미지추가
       photoURL:
@@ -64,7 +66,7 @@ const Register = () => {
 
   const nameCheckHandler = (e) => {
     e.preventDefault();
-    if (name === null) {
+    if (name === "") {
       return alert("닉네임을 입력해주세요");
     }
     let body = {
@@ -99,8 +101,7 @@ const Register = () => {
                   color: "red",
                 }}
               >
-                {" "}
-                불가한{" "}
+                불가한
               </span>
               닉네임입니다.
             </div>
@@ -110,57 +111,66 @@ const Register = () => {
     });
   };
   return (
-    <LoginDiv>
-      <form action="">
-        <label htmlFor="">닉네임</label>
-        <input
-          type="name"
-          value={name}
-          disabled={nameCheck} //nameCheck가 true로 되면 input값 고정
-          onChange={(e) => {
-            setName(e.currentTarget.value);
-          }}
-        />
-        {nameInfo}
-        <button onClick={nameCheckHandler}>닉네임 중복검사</button>
-        <label htmlFor="">이메일</label>
-        <input
-          type="email"
-          value={email}
-          placeholder=" ex) daegon***1@na***.com"
-          onChange={(e) => {
-            setEmail(e.currentTarget.value);
-          }}
-        />
-        <label htmlFor="">비밀번호</label>
-        <input
-          type="password"
-          value={password}
-          minLength={8}
-          placeholder=" 8글자 이상 입력하세요."
-          onChange={(e) => {
-            setPassword(e.currentTarget.value);
-          }}
-        />
-        <label htmlFor="">비밀번호확인</label>
-        <input
-          type="password"
-          value={passwordCF}
-          placeholder=" 8글자 이상 입력하세요."
-          minLength={8}
-          onChange={(e) => {
-            setPasswordCF(e.currentTarget.value);
-          }}
-        />
-        {/* disabled={loaded} */}
-        <div style={{ textAlign: "center" }}>
-          <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
-          <input style={{ marginLeft: "5px" }} type="checkbox" />
-        </div>
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <LoginDiv>
+        <form action="">
+          <label htmlFor="">닉네임</label>
+          <input
+            type="name"
+            value={name}
+            disabled={nameCheck} //nameCheck가 true로 되면 input값 고정
+            onChange={(e) => {
+              setName(e.currentTarget.value);
+            }}
+          />
+          {nameInfo}
+          <button onClick={nameCheckHandler}>닉네임 중복검사</button>
+          <label htmlFor="">이메일</label>
+          <input
+            type="email"
+            value={email}
+            placeholder=" ex) daegon@na**.com"
+            onChange={(e) => {
+              setEmail(e.currentTarget.value);
+            }}
+          />
+          <label htmlFor="">비밀번호</label>
+          <input
+            type="password"
+            value={password}
+            minLength={8}
+            placeholder=" 8글자 이상 입력하세요."
+            onChange={(e) => {
+              setPassword(e.currentTarget.value);
+            }}
+          />
+          <label htmlFor="">비밀번호확인</label>
+          <input
+            type="password"
+            value={passwordCF}
+            placeholder=" 8글자 이상 입력하세요."
+            minLength={8}
+            onChange={(e) => {
+              setPasswordCF(e.currentTarget.value);
+            }}
+          />
+          {/* disabled={loaded} */}
+          <div style={{ textAlign: "center" }}>
+            <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
+            <input style={{ marginLeft: "5px" }} type="checkbox" />
+          </div>
 
-        <button onClick={RegisterFunc}>가입신청</button>
-      </form>
-    </LoginDiv>
+          <button onClick={RegisterHandler}>가입신청</button>
+        </form>
+      </LoginDiv>
+    </div>
   );
 };
 

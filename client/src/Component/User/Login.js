@@ -27,7 +27,7 @@ const Login = () => {
       } else if (err.code === "auth/wrong-password") {
         seteRrorMsg("비밀번호가 일치하지 않습니다.");
       } else {
-        seteRrorMsg("로그인이 실패하였습니다.");
+        seteRrorMsg("로그인 실패하였습니다.");
       }
     }
   };
@@ -39,50 +39,56 @@ const Login = () => {
     }, 3000);
   }, [errorMsg]);
 
-  useEffect(() => {
-    document.body.style.cssText = `
-      position: fixed; 
-      top: -${window.scrollY}px;
-      overflow-y: hidden;
-      width: 100%;`;
-    return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = "";
-      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-    };
-  }, []);
-
   return (
-    <LoginDiv>
-      <form action="">
-        <label>이메일</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.currentTarget.value);
-          }}
-        />
-        <label>비밀번호</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.currentTarget.value);
-          }}
-        />
-        {errorMsg !== null && <p>{errorMsg}</p>}
-        <button onClick={singInFunc}>로그인</button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            navigate("/register");
-          }}
-        >
-          회원가입
-        </button>
-      </form>
-    </LoginDiv>
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        // position: "relative",
+      }}
+    >
+      <LoginDiv>
+        <form>
+          <label>이메일</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.currentTarget.value);
+            }}
+          />
+          <label>비밀번호</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.currentTarget.value);
+            }}
+          />
+          {errorMsg !== null && (
+            <p
+              style={{
+                textAlign: "center",
+                marginTop: "10px",
+              }}
+            >
+              {errorMsg}
+            </p>
+          )}
+          <button onClick={singInFunc}>로그인</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/register");
+            }}
+          >
+            회원가입
+          </button>
+        </form>
+      </LoginDiv>
+    </div>
   );
 };
 

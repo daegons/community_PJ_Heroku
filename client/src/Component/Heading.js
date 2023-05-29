@@ -17,8 +17,10 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import lightoff from "./assets/lightoff.svg";
 import lighton from "./assets/lighton.svg";
 import contentWright from "./assets/contentWright.svg";
-import mainLogo from "./assets/mainLogo.svg";
+// import mainLogo from "./assets/mainLogo.svg";
+import mainIcon from "./assets/mainIcon.png";
 import userEdit from "./assets/userEdit.svg";
+import game from "./assets/game.svg";
 
 const Heading = (props) => {
   const user = useSelector((state) => state.user);
@@ -90,7 +92,7 @@ const Heading = (props) => {
                   style={{ cursor: "pointer" }}
                   onClick={mainPageMoveHandler}
                 >
-                  <img src={mainLogo} alt="메인 아이콘" width="40px" />
+                  <img src={mainIcon} alt="메인 아이콘" width="30px" />
                 </Navbar.Brand>
                 <Navbar.Text>
                   <Link
@@ -118,7 +120,7 @@ const Heading = (props) => {
                       marginRight: "430px",
                     }}
                   >
-                    서브
+                    <img src={game} alt="메인 아이콘" width="30px" />
                   </Link>
                   <Link
                     style={{
@@ -148,7 +150,6 @@ const Heading = (props) => {
                           style={{ width: "32px" }}
                         />
                       </Link>
-
                       {!props.tab ? (
                         <Link
                           style={{

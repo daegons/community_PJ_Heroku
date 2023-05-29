@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.05cae22b.css",
-    "main.js": "/static/js/main.02dc9080.js",
+    "main.js": "/static/js/main.0d4e7b44.js",
     "static/media/cloud.mp4": "/static/media/cloud.98a0b1b542c0403aa4c0.mp4",
     "static/media/soccerPlace.jpg": "/static/media/soccerPlace.9aceb6dd8714122a6a95.jpg",
     "static/media/soccor.png": "/static/media/soccor.bb8da981e356630369e4.png",
     "static/media/lightoff.svg": "/static/media/lightoff.c20cacce9b3247885d6fdcd97daa9a82.svg",
-    "static/media/mainLogo.svg": "/static/media/mainLogo.b8036a35f2987dae7f3a5ee2ec47192b.svg",
     "static/media/lighton.svg": "/static/media/lighton.0208323253e2adbeebfac2bfcecb4d42.svg",
+    "static/media/game.svg": "/static/media/game.6091c40652ab43d6e1824a2fa4594074.svg",
     "static/media/userEdit.svg": "/static/media/userEdit.d3bcc79b95f82be89737f86bc6a6ff2c.svg",
     "static/media/ball.svg": "/static/media/ball.707603d693c276f30832723d513c07e3.svg",
     "static/media/player.svg": "/static/media/player.3081fda8dd9ee1640778aa8597544155.svg",
@@ -17,10 +17,10 @@
     "index.html": "/index.html",
     "static/media/contentWright.svg": "/static/media/contentWright.9c1b0fcf855b9352a6cab52fc1007f4f.svg",
     "main.05cae22b.css.map": "/static/css/main.05cae22b.css.map",
-    "main.02dc9080.js.map": "/static/js/main.02dc9080.js.map"
+    "main.0d4e7b44.js.map": "/static/js/main.0d4e7b44.js.map"
   },
   "entrypoints": [
     "static/css/main.05cae22b.css",
-    "static/js/main.02dc9080.js"
+    "static/js/main.0d4e7b44.js"
   ]
 }

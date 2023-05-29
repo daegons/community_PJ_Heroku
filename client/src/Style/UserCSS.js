@@ -38,14 +38,12 @@ const MyPageDiv = styled.div`
 `;
 
 const LoginDiv = styled.div`
-  /* background: white; */
-
-  /* height: 100%;
-  width: 50%; */
-  max-width: 360px;
-  margin: 0 auto;
-  padding-top: 8rem;
+  background: rgba(255, 255, 255, 0.755);
+  /* height: 100%; */
+  min-width: 360px;
+  border-radius: 15px;
   form {
+    border-radius: 15px;
     width: 100%;
     padding: 20px;
     box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
@@ -71,13 +69,13 @@ const LoginDiv = styled.div`
       padding: 5px 10px;
       background: rgba(75, 155, 185, 0.7);
       color: white;
-      border: 1px solid grey;
+      border: none;
       margin-top: 10px;
       transition: all 0.6s ease;
       &:hover {
         background: rgba(48, 124, 194, 0.8);
         color: white;
-        border: 1px solid grey;
+        border: none;
       }
     }
     @media (max-width: 756px) {
@@ -85,8 +83,9 @@ const LoginDiv = styled.div`
     }
   }
   @media (max-width: 756px) {
-    width: 65%;
-    margin: 0 auto;
+    margin-top: 30px;
+    min-width: 300px;
+    /* margin: 0 auto; */
   }
 `;
 

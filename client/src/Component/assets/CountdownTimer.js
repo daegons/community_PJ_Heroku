@@ -25,7 +25,7 @@ const CountdownTimer = ({ initialCountdown }) => {
         <Card
           bg="light"
           style={{
-            width: "55vh",
+            width: "60vh",
             height: "85px",
             margin: "auto",
             marginTop: "70px",
