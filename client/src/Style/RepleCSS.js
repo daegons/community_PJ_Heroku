@@ -80,7 +80,7 @@ const RepleContentDiv = styled.div`
       display: flex;
       align-items: center;
       p {
-        font-size: 12px;
+        font-size: 15px;
         font-weight: bold;
         color: darkgrey;
         margin-left: 10px;
@@ -123,13 +123,13 @@ const RepleContentDiv = styled.div`
     }
   }
   .time {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 5px;
     color: lightgrey;
   }
   p {
     margin-bottom: 0px;
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 

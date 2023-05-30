@@ -17,13 +17,15 @@ import { motion } from "framer-motion";
 const MainPage = () => {
   //배열로 받아야해서 ([])넣어줌
   const [postList, setPostList] = useState([]);
-  const [sort, setSort] = useState("최신순");
+  const [sort, setSort] = useState("최신글");
   const [search, setSearch] = useState("");
   const [skip, setSkip] = useState(0);
   const [loadMore, setLoadMore] = useState(true);
 
   const [loading, setLoading] = useState(false);
+
   // console.log(postList);
+
   setTimeout(() => {
     setLoading(true);
   }, 1000);
@@ -92,7 +94,7 @@ const MainPage = () => {
 
   const listChangeHandler = (e) => {
     e.preventDefault();
-    sort === "최신순" ? setSort("인기순") : setSort("최신순");
+    sort === "최신글" ? setSort("인기글") : setSort("최신글");
   };
 
   return (

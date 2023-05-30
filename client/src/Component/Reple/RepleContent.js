@@ -7,6 +7,8 @@ import Avatar from "react-avatar";
 import moment from "moment";
 import "moment/locale/ko";
 
+import correction from "../assets/correction.svg";
+
 const RepleContent = (props) => {
   const [modal, setModal] = useState(false);
   const [edit, setEdit] = useState(false);
@@ -99,7 +101,13 @@ const RepleContent = (props) => {
         </div>
         {props.list.author.uid === user.uid && (
           <div className="modalControl">
-            <span onClick={modalHandler}>...</span>
+            <span onClick={modalHandler}>
+              <img
+                src={correction}
+                alt="에디트"
+                style={{ width: "2vh", opacity: "0.3" }}
+              />
+            </span>
             {modal && (
               //
               <div className="modalDiv" ref={ref}>
@@ -125,7 +133,7 @@ const RepleContent = (props) => {
                 setReple(e.currentTarget.value);
               }}
             />
-            <button onClick={submitHandler}>수정 완료</button>
+            <button onClick={submitHandler}>완료</button>
           </form>
           <div className="cancel">
             <button onClick={editCancelHandler}>취소</button>
@@ -138,13 +146,13 @@ const RepleContent = (props) => {
   );
 };
 
-//후크를 사용하면 지정된 요소 외부의 클릭을 감지.
+//useOnClickOutside훅을 사용하면 지정된 요소 외부의 클릭을 감지.
 //참조// https://usehooks.com/useOnClickOutside/
 //3
 function useOnClickOutside(ref, handler) {
   useEffect(() => {
     const listener = (event) => {
-      console.log(ref);
+      // console.log(ref);
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }

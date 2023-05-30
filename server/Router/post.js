@@ -47,7 +47,7 @@ router.post("/submit", (req, res) => {
 router.post("/list", (req, res) => {
   let sort = {};
 
-  if (req.body.sort === "최신순") {
+  if (req.body.sort === "최신글") {
     sort.createdAt = -1;
   } else {
     //인기글
@@ -55,6 +55,8 @@ router.post("/list", (req, res) => {
   }
 
   //몽고DB에서 doc찾는 방법은 find()
+  //$regex = 포함 의미
+  // console.log(req.body);
   Post.find({
     $or: [
       { title: { $regex: req.body.search } },

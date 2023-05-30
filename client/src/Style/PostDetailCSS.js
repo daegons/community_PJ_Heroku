@@ -32,9 +32,11 @@ const Post = styled.div`
     0px 15px 12px rgba(0, 0, 0, 0.1);
   h1 {
     font-weight: bold;
+    /* font-family: "Nanum Pen Script", cursive; */
+    font-family: "Yeon Sung", cursive;
   }
   p {
-    margin-bottom: 0px;
+    /* background: black; */
   }
   .author {
     display: flex;
@@ -46,7 +48,7 @@ const Post = styled.div`
       margin-bottom: 0px;
       margin-left: 10px;
       &.time {
-        font-size: 10px;
+        font-size: 12px;
       }
       &.admin {
         display: flex;
@@ -57,6 +59,12 @@ const Post = styled.div`
       flex-direction: column;
       align-items: flex-start;
     }
+  }
+  .contents {
+    /* background: black; */
+    margin-top: 20px;
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 25px;
   }
 `;
 

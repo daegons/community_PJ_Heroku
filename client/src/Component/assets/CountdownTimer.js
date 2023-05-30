@@ -25,7 +25,7 @@ const CountdownTimer = ({ initialCountdown }) => {
         <Card
           bg="light"
           style={{
-            width: "60vh",
+            width: "55vh",
             height: "85px",
             margin: "auto",
             marginTop: "70px",
@@ -37,7 +37,9 @@ const CountdownTimer = ({ initialCountdown }) => {
             <IoIosMegaphone /> 공지
           </Card.Header>
           <Card.Body style={{ background: "rgba(119, 141, 202, 0.164)" }}>
-            <Card.Text>비방 욕설 영구 밴</Card.Text>
+            <Card.Text style={{ paddingBottom: "5px" }}>
+              비방 욕설 영구 밴 :: <span> 문의 📞 010 - 8595 - 7271</span>
+            </Card.Text>
           </Card.Body>
         </Card>
       ) : (

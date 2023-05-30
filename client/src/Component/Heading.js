@@ -92,7 +92,7 @@ const Heading = (props) => {
                     <img
                       src={contentWright}
                       alt="글작성"
-                      style={{ width: "20px" }}
+                      style={{ width: "20px", margin: "0px 10px 0px 10px" }}
                     />
                   </Link>
                   <Link
@@ -164,7 +164,7 @@ const Heading = (props) => {
                         <img
                           src={userEdit}
                           alt="마이페이지"
-                          style={{ width: "32px" }}
+                          style={{ width: "32px", margin: "0px 8px 0px 8px" }}
                         />
                       </Link>
                       <Navbar.Text

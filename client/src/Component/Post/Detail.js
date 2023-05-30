@@ -45,11 +45,11 @@ const Detail = (props) => {
         });
     }
   };
-  console.log(user);
+  console.log(props);
   return (
     <PostDiv>
       <Post>
-        <h2>{props.postDetil.title}</h2>
+        <h1>{props.postDetil.title}</h1>
         <div className="author">
           <Avatar
             style={{
@@ -58,7 +58,7 @@ const Detail = (props) => {
             }}
             size="40"
             round={true}
-            src={user.photoURL}
+            src={props.postDetil.author.photoURL}
           />
           {props.postDetil.author.displayName}
           <p className="time">
@@ -74,7 +74,7 @@ const Detail = (props) => {
             style={{ height: "auto", width: "100%", borderRadius: "15px" }}
           />
         ) : null}
-        <p>{props.postDetil.content}</p>
+        <p className="contents">{props.postDetil.content}</p>
         {/* <p>댓글 {props.postDetil.repleNum}</p> */}
       </Post>
       {/* uid 값이 일치하면 수정 및 삭제 on */}

@@ -32,14 +32,14 @@ import SubPage from "./Component/Post/SubPage";
 
 function App() {
   const [tab, setTab] = useState(false);
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   // console.log(user.displayName);
   useEffect(() => {
     //onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
       //photoURL로 사용자img 줄수있음..firebase.auth자체기능
-      // console.log(userInfo._delegate.photoURL);
+      // console.log(userInfo);
 
       //사용자 로그아웃 or 로그인하지 않은 상태라면 -> null값
       //로그인했다면 로그인한 데이터를 보여줌
@@ -52,9 +52,9 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log("user : ", user);
-  }, [user]);
+  // useEffect(() => {
+  //   console.log("user : ", user);
+  // }, [user]);
 
   // useEffect(() => {
   //   //signOut() firebase 로그아웃 시키는 함수

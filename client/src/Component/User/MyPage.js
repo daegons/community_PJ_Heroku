@@ -12,7 +12,8 @@ const MyPage = () => {
   const navigate = useNavigate();
   //   console.log(user.photoURL);
   useEffect(() => {
-    //유저 로그인시에도 Login창 이동되서 user.isLoading 추가
+    //로그인상태에서 마이페이지 이동시 Login창 으로이동되서 isLoading userSlice에추가
+    //user 정보 빈 값이였다가 통신 후 받아오는 딜레이 때문..
     if (user.isLoading && !user.accessToken) {
       navigate("/login");
     } else {
@@ -36,9 +37,10 @@ const MyPage = () => {
       .catch(() => {});
   };
 
-  const saveProfile = async (e) => {
+  const saveProfileHanler = async (e) => {
     e.preventDefault();
 
+    //firebase 이미지 저장 후 mongoDB 저장
     try {
       await firebase.auth().currentUser.updateProfile({
         //user 프로필 이미지추가
@@ -61,33 +63,9 @@ const MyPage = () => {
     });
   };
 
-  // useEffect(() => {
-  //   document.body.style.cssText = `
-  //     position: fixed;
-  //     top: -${window.scrollY}px;
-  //     overflow-y: hidden;
-  //     width: 100%;`;
-  //   return () => {
-  //     const scrollY = document.body.style.top;
-  //     document.body.style.cssText = "";
-  //     window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-  //   };
-  // }, []);
-
   return (
     <MyPageDiv>
-      <form
-        style={
-          {
-            // width: "50%",
-            // margin: "0 auto",
-            // display: "flex",
-            // flexDirection: "column",
-            // alignItems: "center",
-            // marginTop: "2rem",
-          }
-        }
-      >
+      <form>
         <label>
           <input
             type="file"
@@ -106,7 +84,7 @@ const MyPage = () => {
             src={currentImage}
           />
         </label>
-        <button onClick={saveProfile}>저장</button>
+        <button onClick={saveProfileHanler}>저장</button>
       </form>
     </MyPageDiv>
   );

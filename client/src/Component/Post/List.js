@@ -6,6 +6,7 @@ import moment from "moment";
 import "moment/locale/ko";
 
 const List = (props) => {
+  //a = post.createdAt , b = post.updatedAt
   const SetTime = (a, b) => {
     if (a !== b) {
       return moment(b).format("YYYY년 MMMM Do h:mm a") + " (수정완료)";
@@ -43,7 +44,16 @@ const List = (props) => {
                 </p>
               </div>
               <p style={{ fontFamily: "Nanum Pen Script" }}>{post.content}</p>
-              <p style={{ color: "blue" }}>댓글{post.repleNum}</p>
+              <p
+                style={{
+                  color: "blue",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  fontFamily: "Yeon Sung",
+                }}
+              >
+                댓글{post.repleNum}
+              </p>
             </Link>
           </ListItem>
         );

@@ -51,7 +51,7 @@ const ListItem = styled.div`
       color: darkgrey;
       margin-bottom: 0px;
       &.time {
-        font-size: 10px;
+        font-size: 12px;
       }
     }
   }
