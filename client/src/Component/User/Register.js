@@ -14,6 +14,8 @@ const Register = () => {
   // const [loaded, setLoaded] = useState(false);
   const [nameCheck, setNameCheck] = useState(false);
   const [nameInfo, setNameInfo] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState(false);
+  const [passwordInfo, setPasswordInfo] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ const Register = () => {
     // setLoaded(true);
     e.preventDefault();
     if (!nameCheck) {
-      return alert("닉네임 중복검사를 진행해 주세요.");
+      return alert("닉네임 중복검사를 진행해주세요.");
     }
     if (password !== passwordCF) {
       return alert("비밀번호 확인 불일치");
@@ -34,7 +36,7 @@ const Register = () => {
     const createdUser = await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password);
-    console.log(createdUser);
+    // console.log(createdUser);
     await createdUser.user.updateProfile({
       //updateProfile을 통해서 firbase에서 제공하는 유저 정보를 설정 할 수 있음
       //displayName은 firbase 자체 기능 : 값 설정 가능
@@ -53,6 +55,7 @@ const Register = () => {
       photoURL:
         "https://kr.object.ncloudstorage.com/react-project/post/1684304602196.png",
     };
+    // console.log(body);
     axios.post("/api/user/register", body).then((res) => {
       if (res.data.success) {
         //회원가입 성공시
@@ -110,6 +113,60 @@ const Register = () => {
       }
     });
   };
+
+  const passwordCheckHandler = (e) => {
+    console.log(password.length);
+    e.preventDefault();
+    if (password !== passwordCF) {
+      setPasswordCheck(false);
+      return setPasswordInfo(
+        <div
+          style={{
+            fontWeight: "bold",
+            fontFamily: "Yeon Sung",
+          }}
+        >
+          비밀번호 확인<span style={{ color: "red" }}> 불일치 </span>
+        </div>
+      );
+    }
+    if (password.length && passwordCF.length > 5) {
+      setPasswordCheck(true);
+      return setPasswordInfo(
+        <div
+          style={{
+            fontWeight: "bold",
+            fontFamily: "Yeon Sung",
+          }}
+        >
+          사용<span style={{ color: "green" }}> 가능한 </span>
+          비밀번호입니다.
+        </div>
+      );
+    }
+
+    setPasswordCheck(false);
+    return setPasswordInfo(
+      <div
+        style={{
+          fontWeight: "bold",
+          fontFamily: "Yeon Sung",
+        }}
+      >
+        비밀번호
+        <span
+          style={{
+            color: "red",
+          }}
+        >
+          {" "}
+          6자리 이상 같게{" "}
+        </span>
+        부탁드려요.
+      </div>
+    );
+  };
+
   return (
     <div
       style={{
@@ -120,7 +177,7 @@ const Register = () => {
       }}
     >
       <LoginDiv>
-        <form action="">
+        <form>
           <label htmlFor="">닉네임</label>
           <input
             type="name"
@@ -132,7 +189,7 @@ const Register = () => {
           />
           {nameInfo}
           <button onClick={nameCheckHandler}>닉네임 중복검사</button>
-          <label htmlFor="">이메일</label>
+          <label>이메일</label>
           <input
             type="email"
             value={email}
@@ -141,32 +198,35 @@ const Register = () => {
               setEmail(e.currentTarget.value);
             }}
           />
-          <label htmlFor="">비밀번호</label>
+          <label>비밀번호</label>
           <input
             type="password"
             value={password}
             minLength={8}
-            placeholder=" 8글자 이상 입력하세요."
+            placeholder=" 6글자 이상 입력하세요."
+            disabled={passwordCheck}
             onChange={(e) => {
               setPassword(e.currentTarget.value);
             }}
           />
-          <label htmlFor="">비밀번호확인</label>
+          <label>비밀번호확인</label>
           <input
             type="password"
             value={passwordCF}
-            placeholder=" 8글자 이상 입력하세요."
+            placeholder=" 6글자 이상 입력하세요."
+            disabled={passwordCheck}
             minLength={8}
             onChange={(e) => {
               setPasswordCF(e.currentTarget.value);
             }}
           />
+          {passwordInfo}
+          <button onClick={passwordCheckHandler}>비밀번호 검사</button>
           {/* disabled={loaded} */}
           <div style={{ textAlign: "center" }}>
             <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
             <input style={{ marginLeft: "5px" }} type="checkbox" />
           </div>
-
           <button onClick={RegisterHandler}>가입신청</button>
         </form>
       </LoginDiv>

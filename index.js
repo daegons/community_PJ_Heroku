@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //post.js 분리시킨거 사용
 //익스프레스.js router 사용해서 공통부분 빼서 나눔
+//예) /api/post로 오는 요청은 ./server/Router/post로 보내줌.
 app.use("/api/post", require("./server/Router/post"));
 app.use("/api/user", require("./server/Router/user"));
 app.use("/api/reple", require("./server/Router/reple"));
