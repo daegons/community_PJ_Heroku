@@ -138,7 +138,7 @@ const RepleContent = (props) => {
   );
 };
 
-//후크를 사용하면 지정된 요소 외부의 클릭을 감지합니다.
+//후크를 사용하면 지정된 요소 외부의 클릭을 감지.
 //참조// https://usehooks.com/useOnClickOutside/
 //3
 function useOnClickOutside(ref, handler) {

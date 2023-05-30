@@ -11,7 +11,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const singInFunc = async (e) => {
+  const singInHandler = async (e) => {
     e.preventDefault();
 
     if (!(email && password)) {
@@ -31,12 +31,11 @@ const Login = () => {
       }
     }
   };
-
   //errorMsg에 변화 있을 때 3초뒤에 에러 메시지 초기화
   useEffect(() => {
     setTimeout(() => {
       seteRrorMsg("");
-    }, 3000);
+    }, 4000);
   }, [errorMsg]);
 
   return (
@@ -67,7 +66,7 @@ const Login = () => {
               setPassword(e.currentTarget.value);
             }}
           />
-          {errorMsg !== null && (
+          {errorMsg !== "" && (
             <p
               style={{
                 textAlign: "center",
@@ -77,7 +76,7 @@ const Login = () => {
               {errorMsg}
             </p>
           )}
-          <button onClick={singInFunc}>로그인</button>
+          <button onClick={singInHandler}>로그인</button>
           <button
             onClick={(e) => {
               e.preventDefault();

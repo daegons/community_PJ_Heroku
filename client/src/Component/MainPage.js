@@ -116,40 +116,26 @@ const MainPage = () => {
                 }}
               />
               <button onClick={() => SearchHandler()}>
-                {/* <FaSearch /> */}
                 <img src={searchIcon} alt="메인 아이콘" />
               </button>
             </div>
             <Button
               // variant={sort}
-              style={{ fontFamily: "'Yeon Sung', cursive", width: "20%" }}
+              style={{
+                fontFamily: "'Yeon Sung', cursive",
+                width: "20%",
+                background: "rgba(26, 96, 158, 0.755)",
+                border: "none",
+              }}
               title={sort}
               onClick={listChangeHandler}
             >
               {sort}
             </Button>
-            {/* <DropdownButton>
-              <Dropdown.Item onClick={() => setSort("최신순")}>
-                최신순
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => setSort("인기순")}>
-                인기순
-              </Dropdown.Item>
-            </DropdownButton> */}
           </GNBDiv>
           <List postList={postList} />
           {loadMore && (
             <FooterDiv>
-              {/* <button
-                style={{
-                  marginBottom: "10vh",
-                  border: "none",
-                  background: "rgba(61, 149, 189, 0.579)",
-                }}
-                onClick={() => getPostLoadMore()}
-              >
-                <img src={more} alt="더보기" />
-              </button> */}
               <motion.button
                 className="square"
                 whileHover={{ scaleX: 1.2 }}

@@ -5,6 +5,7 @@ export const userSlice = createSlice({
   initialState: {
     displayName: "",
     uid: "",
+    //firebase
     accessToken: "",
     photoURL: "",
     isLoading: false,
@@ -17,6 +18,7 @@ export const userSlice = createSlice({
       state.photoURL = action.payload.photoURL;
       state.isLoading = true;
     },
+    //user 로그아웃시에 값 비워줌
     clearUser: (state) => {
       state.displayName = "";
       state.uid = "";

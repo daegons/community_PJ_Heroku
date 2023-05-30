@@ -33,7 +33,7 @@ const GNBDiv = styled.div`
     }
     button {
       height: 100%;
-      border: 0.5px solid #c6c6c6;
+      border: 0.1px solid #c6c6c6;
       border-radius: 0px 15px 15px 0px;
       margin-bottom: -1px;
       opacity: 0.7;

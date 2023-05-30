@@ -17,10 +17,12 @@ const Register = () => {
   const [passwordCheck, setPasswordCheck] = useState(false);
   const [passwordInfo, setPasswordInfo] = useState("");
 
+  const [loaded, setLoaded] = useState(false);
+
   const navigate = useNavigate();
 
   const RegisterHandler = async (e) => {
-    // setLoaded(true);
+    setLoaded(true);
     e.preventDefault();
     if (!nameCheck) {
       return alert("닉네임 중복검사를 진행해주세요.");
@@ -59,6 +61,7 @@ const Register = () => {
     axios.post("/api/user/register", body).then((res) => {
       if (res.data.success) {
         //회원가입 성공시
+        setLoaded(false);
         navigate("/login");
       } else {
         //회원가입 실패시
@@ -78,6 +81,7 @@ const Register = () => {
     axios.post("/api/user/namecheck", body).then((res) => {
       if (res.data.success) {
         if (res.data.check) {
+          console.log(res.data);
           setNameCheck(true);
           setNameInfo(
             <div
@@ -202,7 +206,6 @@ const Register = () => {
           <input
             type="password"
             value={password}
-            minLength={8}
             placeholder=" 6글자 이상 입력하세요."
             disabled={passwordCheck}
             onChange={(e) => {
@@ -215,7 +218,6 @@ const Register = () => {
             value={passwordCF}
             placeholder=" 6글자 이상 입력하세요."
             disabled={passwordCheck}
-            minLength={8}
             onChange={(e) => {
               setPasswordCF(e.currentTarget.value);
             }}
@@ -227,7 +229,9 @@ const Register = () => {
             <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
             <input style={{ marginLeft: "5px" }} type="checkbox" />
           </div>
-          <button onClick={RegisterHandler}>가입신청</button>
+          <button onClick={RegisterHandler} disabled={loaded}>
+            가입신청
+          </button>
         </form>
       </LoginDiv>
     </div>

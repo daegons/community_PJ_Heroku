@@ -2,11 +2,12 @@ import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
 //reduce
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearUser, loginUser } from "./Reducer/userSlice";
-//firebase
+//firebase(유저 로그인 || 로그아웃 정보 제공)
 import firebase from "./firebase";
 
+//components
 import Heading from "./Component/Heading";
 import Upload from "./Component/Post/Upload";
 import Edit from "./Component/Post/Edit";
@@ -30,18 +31,19 @@ import Footer from "./Component/Post/Footer";
 import SubPage from "./Component/Post/SubPage";
 
 function App() {
-  const dispatch = useDispatch();
   const [tab, setTab] = useState(false);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   // console.log(user.displayName);
   useEffect(() => {
-    //onAuthStateChanged 사용자의 상태 변화에 따라 추적 함수..
+    //onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
       //photoURL로 사용자img 줄수있음..firebase.auth자체기능
       // console.log(userInfo._delegate.photoURL);
 
       //사용자 로그아웃 or 로그인하지 않은 상태라면 -> null값
       //로그인했다면 로그인한 데이터를 보여줌
-      // console.log("유저정보 : ", userInfo);
+
       if (userInfo !== null) {
         dispatch(loginUser(userInfo.multiFactor.user));
       } else {
@@ -50,9 +52,9 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   console.log("user : ", user);
-  // }, [user]);
+  useEffect(() => {
+    console.log("user : ", user);
+  }, [user]);
 
   // useEffect(() => {
   //   //signOut() firebase 로그아웃 시키는 함수

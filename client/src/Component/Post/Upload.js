@@ -41,6 +41,7 @@ const Upload = () => {
       title: title,
       content: content,
       image: image,
+      //uid firebase에서 부여하는 유저의 고유 id
       uid: user.uid,
     };
 

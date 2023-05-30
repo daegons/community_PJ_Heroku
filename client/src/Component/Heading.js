@@ -60,8 +60,6 @@ const Heading = (props) => {
             aria-controls="offcanvasNavbar-expand-sm"
             style={{
               border: "none",
-              // display:'flex',
-              // flexDirection:'column'
             }}
           />
           <Navbar.Offcanvas
@@ -71,23 +69,10 @@ const Heading = (props) => {
             style={{
               width: "15vh",
               opacity: "0.9",
-              // display: "flex",
-              // flexDirection: "column",
-              // alignItems: "center",
-              // justifyContent: "center",
             }}
           >
-            {/* <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
-                <img src={mainLogo} alt="메인 아이콘" width="40px" />
-              </Offcanvas.Title>
-            </Offcanvas.Header> */}
             <Offcanvas.Body>
-              <Nav
-                /*className="me-auto"*/
-                className="justify-content-center flex-grow-1 pe-3"
-                // style={{ background: "black" }}
-              >
+              <Nav className="justify-content-center flex-grow-1 pe-3">
                 <Navbar.Brand
                   style={{ cursor: "pointer" }}
                   onClick={mainPageMoveHandler}
@@ -102,7 +87,6 @@ const Heading = (props) => {
                       color: "black",
                       marginRight: "10px",
                       fontFamily: "'Yeon Sung', cursive",
-                      // marginRight: "350px",
                     }}
                   >
                     <img
@@ -131,8 +115,41 @@ const Heading = (props) => {
                       fontFamily: "'Yeon Sung', cursive",
                     }}
                   >
-                    {user.displayName && `${user.displayName}님 접속중..`}
+                    {user.accessToken && `${user.displayName}님 접속중..`}
                   </Link>
+                  {!props.tab ? (
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        marginRight: "15px",
+                        fontFamily: "'Yeon Sung', cursive",
+                      }}
+                      onClick={props.onBlueRightHandler}
+                    >
+                      <img
+                        src={lighton}
+                        alt="블루스크린 끄기"
+                        style={{ width: "32px" }}
+                      />
+                    </Link>
+                  ) : (
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        marginRight: "15px",
+                        fontFamily: "'Yeon Sung', cursive",
+                      }}
+                      onClick={props.onBlueRightHandler}
+                    >
+                      <img
+                        src={lightoff}
+                        alt="블루스크린 켜기"
+                        style={{ width: "32px" }}
+                      />
+                    </Link>
+                  )}
                   {user.accessToken ? (
                     <>
                       <Link
@@ -150,40 +167,6 @@ const Heading = (props) => {
                           style={{ width: "32px" }}
                         />
                       </Link>
-                      {!props.tab ? (
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "black",
-                            marginRight: "15px",
-                            fontFamily: "'Yeon Sung', cursive",
-                          }}
-                          onClick={props.onBlueRightHandler}
-                        >
-                          {/* <BsEmojiSmile style={{ fontSize: "20px" }} /> */}
-                          <img
-                            src={lighton}
-                            alt="블루스크린 끄기"
-                            style={{ width: "32px" }}
-                          />
-                        </Link>
-                      ) : (
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "black",
-                            marginRight: "15px",
-                            fontFamily: "'Yeon Sung', cursive",
-                          }}
-                          onClick={props.onBlueRightHandler}
-                        >
-                          <img
-                            src={lightoff}
-                            alt="블루스크린 켜기"
-                            style={{ width: "32px" }}
-                          />
-                        </Link>
-                      )}
                       <Navbar.Text
                         onClick={logoutHandler}
                         style={{
@@ -209,9 +192,6 @@ const Heading = (props) => {
                   )}
                 </Navbar.Text>
               </Nav>
-              {/* <Navbar.Collapse className="justify-content-end"> */}
-
-              {/* </Navbar.Collapse> */}
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
