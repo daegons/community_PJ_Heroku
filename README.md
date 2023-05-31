@@ -12,21 +12,32 @@
 
 ## 2. 사용 기술
 
-  - react: ^18.2.0
-  - reduxjs-toolkit: ^1.7.1
-  - firebase: ^9.22.0
-  - express: ^4.17.2
+#### `Front-end`
+   - react: ^18.2.0
+   - axios: ^1.4.0
+   - bootstrap: ^5.2.3
+   - firebase: ^9.22.0
+   - framer-motion: ^10.12.16
+   - http-proxy-middleware: ^2.0.1
+   - moment: ^2.29.4,
+   - react-router-dom: ^6.11.1
+   - emotion: ^11.11.0
+   - reduxjs-toolkit: ^1.7.1
+   
+#### `Back-end`
   - aws-sdk: ^2.348.0
+  - express: ^4.17.2
   - mongoose: ^6.1.3
-  - http-proxy-middleware: ^2.0.1
-  - bootstrap: ^5.2.3
-  - emotion: ^11.11.0
+  - nodemon: ^2.0.22
+  - path: ^0.12.7
+  - multer: ^1.4.4
+  - multer-s3: ^2.10.0
   
 </br>
 
 ## 4. 핵심 기능
-server와 client간의 데이터 송수신을 통해 컨텐츠 실시간 등록 및 수정 삭제(CRUD)정보를
-웹페이지에 보여줍니다.
+server와 client간의 axios를 활용한 데이터 송수신을 통해 
+컨텐츠 실시간 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
 
 - **URL 정규식 체크** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
   - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
