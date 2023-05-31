@@ -1,6 +1,6 @@
-# :pushpin: goQuality
+# :pushpin: community
 >고퀄리티 개발 컨텐츠 공유 서비스  
->https://go-quality.dev  
+>[https://react-project.herokuapp.com/]
 
 </br>
 
