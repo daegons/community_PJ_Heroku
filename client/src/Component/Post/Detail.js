@@ -45,7 +45,8 @@ const Detail = (props) => {
         });
     }
   };
-  console.log(props);
+
+  // console.log(props);
   return (
     <PostDiv>
       <Post>

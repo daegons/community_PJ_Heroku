@@ -23,6 +23,7 @@ app.use("/api/user", require("./server/Router/user"));
 app.use("/api/reple", require("./server/Router/reple"));
 
 //서버 열고
+//헤로쿠에서 지정하는 포트 or 5000번 포트
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   //몽고DB와 연결//mongoose사용
