@@ -18,6 +18,7 @@
   - express: ^4.17.2
   - aws-sdk: ^2.348.0
   - mongoose: ^6.1.3
+  - http-proxy-middleware: ^2.0.1
   - bootstrap: ^5.2.3
   - emotion: ^11.11.0
   
