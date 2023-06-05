@@ -32,23 +32,25 @@ const Register = () => {
     }
     if (!(name && email && password && passwordCF)) {
       return alert("빠진 부분이 없나 확인해주세요.");
-    }
+    } //위에 모든 if문에서 벗어나면 사용자 입력 확인 -> xios통신 진행
 
-    //파이어 베이스 인증시간이 걸려서.. 위에 promise로 async await 걸어줌
+    //파이어 베이스 인증되는 시간동안 프로그램 멈추기 위해서 promise로 async await 걸어줌
     const createdUser = await firebase
-      .auth()
+      .auth() //auth()를 통해서 불렀기 때문에 아래 email, password만 입력
       .createUserWithEmailAndPassword(email, password);
-    // console.log(createdUser);
+
     await createdUser.user.updateProfile({
       //updateProfile을 통해서 firbase에서 제공하는 유저 정보를 설정 할 수 있음
       //displayName은 firbase 자체 기능 : 값 설정 가능
+      //유저가 입력한 name을 넣어줌
       displayName: name,
       //user 프로필 이미지추가
       photoURL:
         "https://kr.object.ncloudstorage.com/react-project/post/1684304602196.png",
     });
-    // console.log(createdUser.user);
+    console.log(createdUser.user);
 
+    //firebase에 저장 된 정보를 mongoDB에도 저장
     let body = {
       displayName: createdUser.user.multiFactor.user.displayName,
       email: createdUser.user.multiFactor.user.email,
@@ -119,7 +121,7 @@ const Register = () => {
   };
 
   const passwordCheckHandler = (e) => {
-    console.log(password.length);
+    // console.log(password.length);
     e.preventDefault();
     if (password !== passwordCF) {
       setPasswordCheck(false);

@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/static/css/main.05cae22b.css",
-    "main.js": "/static/js/main.1eb1f573.js",
+    "main.js": "/static/js/main.b5c71bd6.js",
     "static/media/olnyphYousolo.mp4": "/static/media/olnyphYousolo.982b8929051e1c60975a.mp4",
     "static/media/soccerPlace.jpg": "/static/media/soccerPlace.9aceb6dd8714122a6a95.jpg",
     "static/media/soccor.png": "/static/media/soccor.bb8da981e356630369e4.png",
     "static/media/lightoff.svg": "/static/media/lightoff.c20cacce9b3247885d6fdcd97daa9a82.svg",
     "static/media/lighton.svg": "/static/media/lighton.0208323253e2adbeebfac2bfcecb4d42.svg",
-    "static/media/game.svg": "/static/media/game.3ffba38cba7f6997e424d556c928c725.svg",
+    "static/media/game.svg": "/static/media/game.6091c40652ab43d6e1824a2fa4594074.svg",
     "static/media/userEdit.svg": "/static/media/userEdit.d3bcc79b95f82be89737f86bc6a6ff2c.svg",
     "static/media/ball.svg": "/static/media/ball.707603d693c276f30832723d513c07e3.svg",
     "static/media/player.svg": "/static/media/player.3081fda8dd9ee1640778aa8597544155.svg",
-    "static/media/more.svg": "/static/media/more.34f54b764caa2829cf153ba00b92d0d4.svg",
+    "static/media/more.svg": "/static/media/more.c0b0ce59978bf87a6c429606c65251a9.svg",
     "static/media/Ripple.svg": "/static/media/Ripple.47bf0a6962c414b62965c52721d3ac80.svg",
-    "static/media/search2.svg": "/static/media/search2.8e27a9ce339b1bb9e76a85b7e734a35d.svg",
+    "static/media/search2.svg": "/static/media/search2.ca9569514a6c3c3726ecfc2ac027cc41.svg",
     "index.html": "/index.html",
     "static/media/contentWright.svg": "/static/media/contentWright.9c1b0fcf855b9352a6cab52fc1007f4f.svg",
     "static/media/correction.svg": "/static/media/correction.806f82b21ee85fa2346c518afa8bf88d.svg",
     "main.05cae22b.css.map": "/static/css/main.05cae22b.css.map",
-    "main.1eb1f573.js.map": "/static/js/main.1eb1f573.js.map"
+    "main.b5c71bd6.js.map": "/static/js/main.b5c71bd6.js.map"
   },
   "entrypoints": [
     "static/css/main.05cae22b.css",
-    "static/js/main.1eb1f573.js"
+    "static/js/main.b5c71bd6.js"
   ]
 }

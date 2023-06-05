@@ -6,13 +6,14 @@ const { User } = require("../Model/User");
 const setUpload = require("../Util/upload");
 
 router.post("/register", (req, res) => {
-  //클라쪽에서 요청보낸 것들(tmep)유저 displayName,email,uid,photoUR
   // console.log(tmep);
+  //클라쪽에서 요청보낸 것들(tmep)유저 displayName,email,uid,photoUR
   let tmep = req.body;
   //클라쪽에서 tmep 데이터 받아서 mongoDB user에 저장 작업
   Counter.findOne({ name: "counter" })
     .then((doc) => {
       tmep.userNum = doc.userNum;
+      //객채 생성후 요청받은 데이터 넣어주고
       const userData = new User(req.body);
       console.log(userData);
       userData.save().then(() => {
