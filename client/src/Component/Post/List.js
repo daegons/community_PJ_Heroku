@@ -14,7 +14,7 @@ const List = (props) => {
       return moment(a).format("YYYY년 MMMM Do h:mm a");
     }
   };
-  // console.log(props.postList);
+  console.log(props.postList);
   return (
     <ListDiv>
       {props.postList.map((post, i) => {

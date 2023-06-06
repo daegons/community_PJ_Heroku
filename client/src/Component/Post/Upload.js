@@ -18,7 +18,7 @@ const Upload = () => {
 
   let navigate = useNavigate();
   const user = useSelector((state) => state.user);
-
+  console.log(user);
   //로그인 된유저만 upload페이지 보여주기..
   //login페이지로 이동~~
   useEffect(() => {
@@ -44,7 +44,7 @@ const Upload = () => {
       //uid firebase에서 부여하는 유저의 고유 id
       uid: user.uid,
     };
-
+    // console.log(body);
     axios
       .post("/api/post/submit", body)
       .then((res) => {

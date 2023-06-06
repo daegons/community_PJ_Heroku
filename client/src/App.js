@@ -36,19 +36,19 @@ function App() {
   const dispatch = useDispatch();
   // console.log(user.displayName);
   useEffect(() => {
-    //onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
+    //*onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
       //photoURL로 사용자img 줄수있음..firebase.auth자체기능
-      // console.log(userInfo);
+      console.log(userInfo);
 
       //사용자 로그아웃 or 로그인하지 않은 상태라면 -> null값
       //로그인했다면 로그인한 데이터를 보여줌
 
-      if (userInfo !== null) {
-        dispatch(loginUser(userInfo.multiFactor.user));
-      } else {
-        dispatch(clearUser());
-      }
+      userInfo
+        ? //user 정보 store로 정보 보냄
+          dispatch(loginUser(userInfo.multiFactor.user))
+        : //false면 유저 정보 비워줌
+          dispatch(clearUser());
     });
   }, []);
 
@@ -60,7 +60,6 @@ function App() {
   //   //signOut() firebase 로그아웃 시키는 함수
   //   firebase.auth().signOut();
   // }, []);
-
   const onBlueRightHandler = (e) => {
     e.preventDefault();
     tab === false ? setTab(true) : setTab(false);

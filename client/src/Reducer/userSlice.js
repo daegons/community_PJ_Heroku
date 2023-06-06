@@ -11,6 +11,7 @@ export const userSlice = createSlice({
     isLoading: false,
   },
   reducers: {
+    //로그인시에 데이터
     loginUser: (state, action) => {
       state.displayName = action.payload.displayName;
       state.uid = action.payload.uid;

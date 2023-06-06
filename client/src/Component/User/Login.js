@@ -15,11 +15,14 @@ const Login = () => {
     e.preventDefault();
 
     if (!(email && password)) {
+      //email , password 값이 없을시 alert창
       return alert("빈칸을 채워주세요.");
     }
+    //정상 입력시 firebase 인증 진행
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       alert(`환영합니다.`);
+      //로그인 완료시 home으로 이동
       navigate("/");
     } catch (err) {
       if (err.code === "auth/user-not-found") {
