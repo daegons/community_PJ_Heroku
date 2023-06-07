@@ -10,11 +10,11 @@ const MyPage = () => {
   const user = useSelector((state) => state.user);
   const [currentImage, setCurrentImage] = useState("");
   const navigate = useNavigate();
-  //   console.log(user.photoURL);
+  console.log(user.photoURL);
   useEffect(() => {
-    //로그인상태에서 마이페이지 이동시 Login창 으로이동되서 isLoading userSlice에추가
-    //user 정보 빈 값이였다가 통신 후 받아오는 딜레이 때문..
-    if (user.isLoading && !user.accessToken) {
+    //통신이 없는 순간에 코드가 실행되어서 login페이지로 이동됨 방지하기 위해서 isLoading userSlice에추가
+    //user가 변경될 때마다 if문 실행으로 새로고침시 로그인페이지 이동하는거 해결
+    if (user.isLoading === true && user.accessToken === "") {
       navigate("/login");
     } else {
       setCurrentImage(user.photoURL);

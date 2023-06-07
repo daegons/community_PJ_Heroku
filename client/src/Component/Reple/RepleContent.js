@@ -42,8 +42,9 @@ const RepleContent = (props) => {
     let body = {
       uid: user.uid,
       reple: reple,
-      repleId: props.list._id,
       postId: props.list.postId,
+      //reple 추적하려고 repleId 추가
+      repleId: props.list._id,
     };
     axios.post("/api/reple/edit", body).then((res) => {
       if (res.data.success) {
@@ -65,9 +66,7 @@ const RepleContent = (props) => {
   };
   const deleteHandler = () => {
     if (window.confirm("정말로 삭제하시겠습니까?")) {
-      // console.log(params.postNum); //post id값 ex)1
       let body = {
-        //let body =
         repleId: props.list._id,
         postId: props.list.postId,
       };
@@ -101,13 +100,15 @@ const RepleContent = (props) => {
         </div>
         {props.list.author.uid === user.uid && (
           <div className="modalControl">
-            <span onClick={modalHandler}>
-              <img
-                src={correction}
-                alt="에디트 이미지"
-                style={{ width: "2vh", opacity: "0.3" }}
-              />
-            </span>
+            {modal === false && edit === false && (
+              <span onClick={modalHandler}>
+                <img
+                  src={correction}
+                  alt="에디트 이미지"
+                  style={{ width: "2vh", opacity: "0.3" }}
+                />
+              </span>
+            )}
             {modal && (
               //
               <div className="modalDiv" ref={ref}>
@@ -149,7 +150,7 @@ const RepleContent = (props) => {
 //useOnClickOutside훅을 사용하면 지정된 요소 외부의 클릭을 감지.
 //참조// https://usehooks.com/useOnClickOutside/
 //3
-function useOnClickOutside(ref, handler) {
+const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
     const listener = (event) => {
       // console.log(ref);
@@ -167,5 +168,5 @@ function useOnClickOutside(ref, handler) {
       document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]);
-}
+};
 export default RepleContent;

@@ -48,7 +48,7 @@ const Register = () => {
       photoURL:
         "https://kr.object.ncloudstorage.com/react-project/post/1684304602196.png",
     });
-    console.log(createdUser.user);
+    // console.log(createdUser.user);
 
     //firebase에 저장 된 정보를 mongoDB에도 저장
     let body = {

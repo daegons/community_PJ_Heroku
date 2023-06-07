@@ -32,17 +32,14 @@ import SubPage from "./Component/Post/SubPage";
 
 function App() {
   const [tab, setTab] = useState(false);
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  // console.log(user.displayName);
+  console.log(user);
   useEffect(() => {
     //*onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
       //photoURL로 사용자img 줄수있음..firebase.auth자체기능
-      console.log("firebase유저정보", userInfo);
-
-      //사용자 로그아웃 or 로그인하지 않은 상태라면 -> null값
-      //로그인했다면 로그인한 데이터를 보여줌
+      // console.log("firebase유저정보", userInfo);
 
       userInfo
         ? //user 정보 store로 정보 보냄
@@ -67,8 +64,6 @@ function App() {
   };
 
   return (
-    //playsinline 이거는 아이폰 사용시 video먼저 뜨는거 방지/ 안드는 위에 두개만해도 가능
-
     <>
       <div style={{ height: "100vh" }}>
         <div className={`landingpage ${tab === true ? "active" : ""}`}>
@@ -78,7 +73,7 @@ function App() {
             autoPlay
             loop
             muted
-            playsInline //이부분 추가해도 안돼었던건 i가 소문자여서...ㅠ
+            playsInline //추가하면 video사용시 아이폰 영상 자동 확대 안되게 설정
             className="video-bg"
           />
           <div
@@ -99,15 +94,9 @@ function App() {
               {/* 서브페이지 추가 */}
               <Route path="/subpage" element={<SubPage />} />
             </Routes>
+            <Footer />
           </div>
-          <Footer />
         </div>
-        {/* 
-        Add
-        1. 검색기능 -(post관련)
-        2. 유저프로필 이미지 & 이미지 변경
-        3. 정렬 최신 / 인기 - (post관련)
-      */}
       </div>
     </>
   );

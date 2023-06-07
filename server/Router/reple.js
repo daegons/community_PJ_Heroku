@@ -55,7 +55,6 @@ router.post("/edit", (req, res) => {
     postId: req.body.postId,
     reple: req.body.reple,
     uid: req.body.uid,
-    // repleId: req.body._id,
   };
   Reple.findOneAndUpdate(
     {
