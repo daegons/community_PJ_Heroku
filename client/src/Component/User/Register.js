@@ -150,8 +150,8 @@ const Register = () => {
         </div>
       );
     }
-
     setPasswordCheck(false);
+
     return setPasswordInfo(
       <div
         style={{

@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RepleUploadDiv } from "../../Style/RepleCSS.js";
+import axios from "axios";
 
-import { RepleUploadDiv } from '../../Style/RepleCSS.js';
-function RepleUpload(props) {
-  const [reple, setReple] = useState('');
+const RepleUpload = (props) => {
+  //console.log(props); postId:"646ee79b9124f40dc91244ee"
+
+  const [reple, setReple] = useState("");
+
   const user = useSelector((state) => state.user);
-
+  console.log(user);
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (!reple) {
-      return alert('댓글 내용을 채워주세요!');
+    if (reple === "") {
+      return alert("댓글 내용을 채워주세요.");
     }
     let body = {
       reple: reple,
@@ -19,12 +22,12 @@ function RepleUpload(props) {
       postId: props.postId,
     };
 
-    axios.post('/api/reple/submit', body).then((response) => {
-      if (response.data.success) {
-        alert('댓글 작성이 성공하였습니다.');
+    axios.post("/api/reple/submit", body).then((res) => {
+      if (res.data.success) {
+        alert("댓글 작성이 성공하였습니다.");
         window.location.reload();
       } else {
-        alert('댓글 작성에 실패하였습니다.');
+        alert("댓글 작성에 실패하였습니다.");
       }
     });
   };
@@ -43,6 +46,6 @@ function RepleUpload(props) {
       </form>
     </RepleUploadDiv>
   );
-}
+};
 
 export default RepleUpload;

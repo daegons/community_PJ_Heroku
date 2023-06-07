@@ -39,7 +39,7 @@ function App() {
     //*onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
       //photoURL로 사용자img 줄수있음..firebase.auth자체기능
-      console.log(userInfo);
+      console.log("firebase유저정보", userInfo);
 
       //사용자 로그아웃 or 로그인하지 않은 상태라면 -> null값
       //로그인했다면 로그인한 데이터를 보여줌

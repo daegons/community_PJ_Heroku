@@ -20,17 +20,15 @@ const PostArea = () => {
       .post("/api/post/detail", body)
       .then((res) => {
         if (res.data.success) {
-          setTimeout(() => {
-            setPostDetail(res.data.post);
-            setLoaded(true);
-          }, 1000);
+          setPostDetail(res.data.post);
+          setLoaded(true);
         }
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  //646316440e622de48df366ec 이런식으로 정상으로 나옴
+  //646316440e622de48d***** 이런식으로 정상으로 나옴
   // console.log(postDetil._id);
   return (
     <div>

@@ -104,7 +104,7 @@ const RepleContent = (props) => {
             <span onClick={modalHandler}>
               <img
                 src={correction}
-                alt="에디트"
+                alt="에디트 이미지"
                 style={{ width: "2vh", opacity: "0.3" }}
               />
             </span>

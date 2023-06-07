@@ -10,6 +10,7 @@ const postSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    //댓글 갯수를 알기 위해서 repleNum 추가
     repleNum: {
       type: Number,
       default: 0,

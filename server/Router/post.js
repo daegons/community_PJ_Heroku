@@ -125,8 +125,11 @@ router.post("/delete", (req, res) => {
     });
 });
 
+//img올리는 과정은 setUpload()에서 진행
+//setUpload()에 인자로 이름 주기로 함
 router.post(
   "/image/upload",
+  //주의사항 폴더를 가서 만들어줘야 합니다.
   setUpload("react-project/post"),
   (req, res, next) => {
     res.status(200).json({ success: true, filePath: res.req.file.location });
