@@ -32,9 +32,9 @@ import SubPage from "./Component/Post/SubPage";
 
 function App() {
   const [tab, setTab] = useState(false);
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  console.log(user);
+  // console.log(user);
   useEffect(() => {
     //*onAuthStateChanged firebase사용자의 상태 변화에 따라 추적 함수..
     firebase.auth().onAuthStateChanged((userInfo) => {
