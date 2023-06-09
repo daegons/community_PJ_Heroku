@@ -89,13 +89,13 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 
 </br>
 
-## 6. 트러블 슈팅
+## 트러블 슈팅
 <details>
 <summary>server, res.sendFile(경로 문제)</summary>
 <div markdown="1">
 
 - path 내장 모듈, app.use(express.static(...)) 사용하여 해결
-- ['블로그'](https://qzom1425.tistory.com/entry/%EC%9E%91%EC%97%85%EC%A4%91-%EB%A7%8C%EB%82%9C-%EC%97%90%EB%9F%AC)
+- [블로그](https://qzom1425.tistory.com/entry/%EC%9E%91%EC%97%85%EC%A4%91-%EB%A7%8C%EB%82%9C-%EC%97%90%EB%9F%AC)
 
 </div>
 </details>
@@ -113,170 +113,67 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 <summary>CORS 이슈 문제</summary>
 <div markdown="1">
   
-  - http-proxy-middleware를 사용하면 cors 정책을 우회로 해결
-  - 
+  - http-proxy-middleware를 사용하여 cors 정책을 우회로 해결
+  - [블로그](https://qzom1425.tistory.com/entry/%EB%A1%9C%EC%BB%AC-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B2%84-%ED%86%B5%EC%8B%A0-%EB%AC%B8%EC%A0%9C-CORS-%EC%9D%B4%EC%8A%88)
   
 </div>
 </details>
 
 <details>
-<summary> Post 목록 출력시에 Member 객체 출력 에러 </summary>
+<summary> client에서 보내온 req.body, server에서 확인시 디폴트 값으로 Undefined 설정 문제 </summary>
 <div markdown="1">
   
-  - 에러 메세지(500에러)
-    - No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationConfig.SerializationFeature.FAIL_ON_EMPTY_BEANS)
-  - 해결
-    - Post 엔티티에 @ManyToOne 연관관계 매핑을 LAZY 옵션에서 기본(EAGER)옵션으로 수정
-  
+  - 버전 업데이트로 react에 내장된 body-parser 모듈 사용
+  - [블로그](https://qzom1425.tistory.com/entry/client%EC%97%90%EC%84%9C-server%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B4%EB%82%B4%EA%B8%B0undefined)
 </div>
 </details>
     
 <details>
-<summary> 프로젝트를 git init으로 생성 후 발생하는 npm run dev/build 오류 문제 </summary>
+<summary> server에서 mongoDB 데이터 find()로 찾을 시에 생기는 문제 </summary>
 <div markdown="1">
-  
-  ```jsx
-    $ npm run dev
-    npm ERR! path C:\Users\integer\IdeaProjects\pilot\package.json
-    npm ERR! code ENOENT
-    npm ERR! errno -4058
-    npm ERR! syscall open
-    npm ERR! enoent ENOENT: no such file or directory, open 'C:\Users\integer\IdeaProjects\pilot\package.json'
-    npm ERR! enoent This is related to npm not being able to find a file.
-    npm ERR! enoent
-
-    npm ERR! A complete log of this run can be found in:
-    npm ERR!     C:\Users\integer\AppData\Roaming\npm-cache\_logs\2019-02-25T01_23_19_131Z-debug.log
-  ```
-  
-  - 단순히 npm run dev/build 명령을 입력한 경로가 문제였다.
+   
+  - findOne() 사용으로 단일 객체를 반환하여 해결
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B8%80-%EC%9E%91%EC%84%B1-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EB%8B%A4-%EC%88%AB%EC%9E%90-%EB%B6%80%EC%97%AC%ED%95%98%EA%B8%B0)
    
 </div>
 </details>    
 
 <details>
-<summary> 태그 선택후 등록하기 누를 때 `object references an unsaved transient instance - save the transient instance before flushing` 오류</summary>
+<summary> video 태그로 바탕화면에 영상 입힐 시에 아이폰 자동 영상 확대 문제(안드로이드는 정상) </summary>
 <div markdown="1">
   
-  - Post 엔티티의 @ManyToMany에 영속성 전이(cascade=CascadeType.ALL) 추가
-    - JPA에서 Entity를 저장할 때 연관된 모든 Entity는 영속상태여야 한다.
-    - CascadeType.PERSIST 옵션으로 부모와 자식 Enitity를 한 번에 영속화할 수 있다.
-    - 참고
-        - [https://stackoverflow.com/questions/2302802/object-references-an-unsaved-transient-instance-save-the-transient-instance-be/10680218](https://stackoverflow.com/questions/2302802/object-references-an-unsaved-transient-instance-save-the-transient-instance-be/10680218)
-   
+  - video태그에 playsInline 속성 추가로 해결
+  
 </div>
 </details>    
 
 <details>
-<summary> JSON: Infinite recursion (StackOverflowError)</summary>
+<summary> firebase import 버전 문제 </summary>
 <div markdown="1">
   
-  - @JsonIgnoreProperties 사용으로 해결
-    - 참고
-        - [http://springquay.blogspot.com/2016/01/new-approach-to-solve-json-recursive.html](http://springquay.blogspot.com/2016/01/new-approach-to-solve-json-recursive.html)
-        - [https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue](https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue)
+  - firebase import시에 compat 추가로 해결
+  - [블로그](https://qzom1425.tistory.com/entry/%EC%9C%A0%EC%A0%80-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5-firebase1-2)
         
 </div>
 </details>  
     
 <details>
-<summary> H2 접속문제</summary>
+<summary> redux 비직렬화 관련 에러 </summary>
 <div markdown="1">
   
-  - H2의 JDBC URL이 jdbc:h2:~/test 으로 되어있으면 jdbc:h2:mem:testdb 으로 변경해서 접속해야 한다.
-        
+  - 미들웨어 설정으로 임시해결
+  - [블로그](https://qzom1425.tistory.com/entry/Redux-Redux-Toolkit-%EC%9E%91%EC%97%85)
+   
 </div>
 </details> 
     
 <details>
-<summary> 컨텐츠수정 모달창에서 태그 셀렉트박스 드랍다운이 뒤쪽에 보이는 문제</summary>
+<summary> Axios통신 시에 딜레이 문제로 접근성 낮아지는 문제 </summary>
 <div markdown="1">
   
-   - ElementUI의 Global Config에 옵션 추가하면 해결
-     - main.js 파일에 `Vue.us(ElementUI, { zIndex: 9999 });` 옵션 추가(9999 이하면 안됌)
-   - 참고
-     - [https://element.eleme.io/#/en-US/component/quickstart#global-config](https://element.eleme.io/#/en-US/component/quickstart#global-config)
-        
-</div>
-</details> 
-
-<details>
-<summary> HTTP delete Request시 개발자도구의 XHR(XMLHttpRequest )에서 delete요청이 2번씩 찍히는 이유</summary>
-<div markdown="1">
-  
-  - When you try to send a XMLHttpRequest to a different domain than the page is hosted, you are violating the same-origin policy. However, this situation became somewhat common, many technics are introduced. CORS is one of them.
-
-        In short, server that you are sending the DELETE request allows cross domain requests. In the process, there should be a **preflight** call and that is the **HTTP OPTION** call.
-
-        So, you are having two responses for the **OPTION** and **DELETE** call.
-
-        see [MDN page for CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
-
-    - 출처 : [https://stackoverflow.com/questions/35808655/why-do-i-get-back-2-responses-of-200-and-204-when-using-an-ajax-call-to-delete-o](https://stackoverflow.com/questions/35808655/why-do-i-get-back-2-responses-of-200-and-204-when-using-an-ajax-call-to-delete-o)
-        
-</div>
-</details> 
-
-<details>
-<summary> 이미지 파싱 시 og:image 경로가 달라서 제대로 파싱이 안되는 경우</summary>
-<div markdown="1">
-  
-  - UserAgent 설정으로 해결
-        - [https://www.javacodeexamples.com/jsoup-set-user-agent-example/760](https://www.javacodeexamples.com/jsoup-set-user-agent-example/760)
-        - [http://www.useragentstring.com/](http://www.useragentstring.com/)
-        
-</div>
-</details> 
-    
-<details>
-<summary> 구글 로그인으로 로그인한 사용자의 정보를 가져오는 방법이 스프링 2.0대 버전에서 달라진 것</summary>
-<div markdown="1">
-  
-  - 1.5대 버전에서는 Controller의 인자로 Principal을 넘기면 principal.getName(0에서 바로 꺼내서 쓸 수 있었는데, 2.0대 버전에서는 principal.getName()의 경우 principal 객체.toString()을 반환한다.
-    - 1.5대 버전에서 principal을 사용하는 경우
-    - 아래와 같이 사용했다면,
-
-    ```jsx
-    @RequestMapping("/sso/user")
-    @SuppressWarnings("unchecked")
-    public Map<String, String> user(Principal principal) {
-        if (principal != null) {
-            OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) principal;
-            Authentication authentication = oAuth2Authentication.getUserAuthentication();
-            Map<String, String> details = new LinkedHashMap<>();
-            details = (Map<String, String>) authentication.getDetails();
-            logger.info("details = " + details);  // id, email, name, link etc.
-            Map<String, String> map = new LinkedHashMap<>();
-            map.put("email", details.get("email"));
-            return map;
-        }
-        return null;
-    }
-    ```
-
-    - 2.0대 버전에서는
-    - 아래와 같이 principal 객체의 내용을 꺼내 쓸 수 있다.
-
-    ```jsx
-    UsernamePasswordAuthenticationToken token =
-                    (UsernamePasswordAuthenticationToken) SecurityContextHolder
-                            .getContext().getAuthentication();
-            Map<String, Object> map = (Map<String, Object>) token.getPrincipal();
-
-            String email = String.valueOf(map.get("email"));
-            post.setMember(memberRepository.findByEmail(email));
-    ```
-        
-</div>
-</details> 
-    
-<details>
-<summary> 랭킹 동점자 처리 문제</summary>
-<div markdown="1">
-  
-  - PageRequest의 Sort부분에서 properties를 "rankPoint"를 주고 "likeCnt"를 줘서 댓글수보다 좋아요수가 우선순위 갖도록 설정.
-  - 좋아요 수도 똑같다면..........
-        
+   - 로딩화면(스피너) 추가
+   - [블로그](https://qzom1425.tistory.com/entry/%EC%8A%A4%ED%94%BC%EB%84%88-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80)
+   
 </div>
 </details> 
     
