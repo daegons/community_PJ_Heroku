@@ -101,11 +101,10 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 </details>
 
 <details>
-<summary>vue-devtools 크롬익스텐션 인식 오류 문제</summary>
+<summary>Axios 무한 렌더 문제</summary>
 <div markdown="1">
   
-  - main.js 파일에 `Vue.config.devtools = true` 추가로 해결
-  - [https://github.com/vuejs/vue-devtools/issues/190](https://github.com/vuejs/vue-devtools/issues/190)
+  - useEffect훅을 사용하여 해결
   
 </div>
 </details>
