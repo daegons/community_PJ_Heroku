@@ -36,8 +36,10 @@
   
 </br>
 
+
 ## 4. 핵심 기능
 server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신을 통해 </br> mongoose를 활용하여 mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
+
 
 - **Axios 비동기 요청** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
   - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
@@ -89,11 +91,11 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 
 ## 6. 트러블 슈팅
 <details>
-<summary>npm run dev 실행 오류</summary>
+<summary>server, res.sendFile(경로 문제)</summary>
 <div markdown="1">
 
-- Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
-- `$ npm install —save-dev webpack-dev-server@3.0.0`
+- path 내장 모듈, app.use(express.static(...)) 사용하여 해결
+- [`$ npm install —save-dev webpack-dev-server@3.0.0`](https://qzom1425.tistory.com/entry/%EC%9E%91%EC%97%85%EC%A4%91-%EB%A7%8C%EB%82%9C-%EC%97%90%EB%9F%AC)
 
 </div>
 </details>
