@@ -37,7 +37,7 @@
 </br>
 
 ## 4. 핵심 기능
-server와 client간의 axios를 활용한 데이터 송수신을 통해 컨텐츠 실시간 mongoose를 활용하여 </br> mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
+server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신을 통해 </br> mongoose를 활용하여 mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
 
 - **URL 정규식 체크** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
   - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
