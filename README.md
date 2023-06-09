@@ -95,7 +95,7 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 <div markdown="1">
 
 - path 내장 모듈, app.use(express.static(...)) 사용하여 해결
-- [`$ npm install —save-dev webpack-dev-server@3.0.0`](https://qzom1425.tistory.com/entry/%EC%9E%91%EC%97%85%EC%A4%91-%EB%A7%8C%EB%82%9C-%EC%97%90%EB%9F%AC)
+- https://qzom1425.tistory.com/entry/%EC%9E%91%EC%97%85%EC%A4%91-%EB%A7%8C%EB%82%9C-%EC%97%90%EB%9F%AC
 
 </div>
 </details>
