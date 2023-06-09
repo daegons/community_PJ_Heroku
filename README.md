@@ -91,7 +91,7 @@ server와 client간의 axios를 활용한 데이터 송수신을 통해
 
 </br>
 
-## 6. 그 외 트러블 슈팅
+## 6. 트러블 슈팅
 <details>
 <summary>npm run dev 실행 오류</summary>
 <div markdown="1">
