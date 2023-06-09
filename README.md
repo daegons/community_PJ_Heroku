@@ -1,6 +1,6 @@
 # :pushpin: community
 >커뮤니티 서비스  
->[https://react-project.herokuapp.com/]
+>[포트폴리오](https://react-project.herokuapp.com/)
 
 </br>
 
