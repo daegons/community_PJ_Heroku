@@ -186,7 +186,7 @@
 <div markdown="1">
   
   * 맡은 작업
-    - 지역별 관광지 정보 및 좌표 data search
+    - 지역별 관광지 정보 및 좌표 api data searching
     - 서브 페이지, 게시판 구현 
   - [사이트](https://daegons.github.io/t-project1/)
   - [회고 및 느낀점](https://qzom1425.tistory.com/entry/%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0)
