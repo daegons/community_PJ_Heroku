@@ -1,4 +1,4 @@
-# :pushpin: community
+# :pushpin: React.js_community
 >커뮤니티 서비스 
  
 >[포트폴리오](https://react-project.herokuapp.com/)
