@@ -175,7 +175,7 @@
 ## 팀 프로젝트 및 개인 작업물
 
 <details>
-<summary> 카카오맵을 활용하여 관광지 검색 사이트 구현(팀프로젝트) [사이트](https://daegons.github.io/t-project1/) </summary>
+<summary> 팀프로젝트_카카오맵을 활용하여 관광지 검색 사이트 구현 [사이트](https://daegons.github.io/t-project1/) </summary>
 <div markdown="1">
   
   * 맡은 작업
