@@ -182,7 +182,7 @@
 ## 팀 프로젝트 및 개인 작업물
 
 <details>
-<summary> (팀프로젝트)카카오맵을 활용하여 관광지 검색 사이트 구현 </summary>
+<summary> 팀프로젝트)카카오맵을 활용하여 관광지 검색 사이트 구현 </summary>
 <div markdown="1">
   
   * 맡은 작업
@@ -195,7 +195,7 @@
 </details>
 
 <details>
-<summary> 웹 사이트 구현 </summary>
+<summary> 개인)웹 사이트 구현 </summary>
 <div markdown="1">
   
   - javascript, jQuery, html, css를 사용하여 웹사이트 구현
@@ -205,7 +205,7 @@
 </details>
 
 <details>
-<summary> react다이어리 사이트 구현(공부용) </summary>
+<summary> 개인)react다이어리 사이트 구현(공부용) </summary>
 <div markdown="1">
   
   - [사이트](https://daegon---react-project.web.app/)
@@ -214,7 +214,7 @@
 </details>
 
 <details>
-<summary> 웹(nike) 사이트 구현(학원 공부용) </summary>
+<summary> 개인)웹(nike) 사이트 구현(학원 공부용) </summary>
 <div markdown="1">
   
   - [사이트](https://daegons.github.io/study_Web_Nike/)
