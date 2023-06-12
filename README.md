@@ -172,7 +172,21 @@
 </div>
 </details> 
     
+## 팀 프로젝트 및 개인 작업물
+
+<details>
+<summary> 카카오맵을 활용하여 관광지 검색 사이트 구현(팀프로젝트)[사이트](https://daegons.github.io/t-project1/) </summary>
+<div markdown="1">
+  
+  * 맡은 작업
+    - 지역별 관광지 정보 및 좌표 찾기
+    - 서브 페이지, 게시판 구현 
+  - [회고 / 느낀점](https://qzom1425.tistory.com/entry/%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0)
+        
+</div>
+</details>
+    
 </br>
 
 ## 회고 / 느낀점
->프로젝트 개발 회고 글: 
+>[React.js 개인 프로젝트 개발 회고 글](https://qzom1425.tistory.com/entry/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0-%EB%B0%8F-%EB%8A%90%EB%82%80%EC%A0%90)
