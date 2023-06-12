@@ -172,9 +172,11 @@
 </div>
 </details> 
     
+    
 ## 회고 및 느낀점
 >[React.js 개인 프로젝트 개발 회고](https://qzom1425.tistory.com/entry/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0-%EB%B0%8F-%EB%8A%90%EB%82%80%EC%A0%90)    
-    
+  
+  
 ## 팀 프로젝트 및 개인 작업물
 
 <details>
