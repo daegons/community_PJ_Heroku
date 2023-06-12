@@ -8,14 +8,14 @@
 >[블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=8)
 </br>
 
-## 1. 제작 기간
+## 제작 기간
 
 - 2023년 5월 ~ 작업중
 - 개인 프로젝트
 
 </br>
 
-## 2. 사용 기술
+## 사용 기술
 
 #### `Front-end`
    - react: ^18.2.0
@@ -40,7 +40,7 @@
   
 </br>
 
-## 4. 핵심 기능
+## 핵심 기능
 server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신을 통해 </br> mongoose를 활용하여 mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
 
 </br>
@@ -135,5 +135,5 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
     
 </br>
 
-## 6. 회고 / 느낀점
+## 회고 / 느낀점
 >프로젝트 개발 회고 글: 
