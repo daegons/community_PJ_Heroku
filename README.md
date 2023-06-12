@@ -193,5 +193,32 @@
         
 </div>
 </details>
-    
+
+<details>
+<summary> 웹 사이트 구현 </summary>
+<div markdown="1">
+  
+  - javascript, jQuery, html, css를 사용하여 웹사이트 구현
+  - [사이트](https://daegons.github.io/responsive_web_poroject/)
+        
+</div>
+</details>
+
+<details>
+<summary> react다이어리 사이트 구현(공부용) </summary>
+<div markdown="1">
+  
+  - [사이트](https://daegon---react-project.web.app/)
+        
+</div>
+</details>
+
+<details>
+<summary> 웹(nike) 사이트 구현(학원 공부용) </summary>
+<div markdown="1">
+  
+  - [사이트](https://daegons.github.io/study_Web_Nike/)
+        
+</div>
+</details>
 </br>
