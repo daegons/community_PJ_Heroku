@@ -76,8 +76,8 @@
 <summary> 내용 검색 기능 </summary>
 <div markdown="1">
   
-  - sort()메서드 활용 
-  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EC%B5%9C%EC%8B%A0-%EC%9D%B8%EA%B8%B0%EC%88%9C%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A0%AC)
+  - $regex(정규표현식) 활용
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80)
         
 </div>
 </details>
