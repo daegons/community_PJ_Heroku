@@ -41,7 +41,46 @@
 </br>
 
 ## 핵심 기능
-server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신을 통해 </br> mongoose를 활용하여 mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
+
+<details>
+<summary> 로그인 기능 </summary>
+<div markdown="1">
+  
+  - firebase Auth 활용
+  - [블로그](https://qzom1425.tistory.com/entry/%EC%9C%A0%EC%A0%80-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5-firebase-auth1-1)
+        
+</div>
+</details>
+
+<details>
+<summary> 게시글 수정,삭제,등록 기능 </summary>
+<div markdown="1">
+  
+  - mongoose를 사용하여 mongoDB에 작업 
+  - [블로그](https://qzom1425.tistory.com/entry/Mongoose%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-Nodejs%EC%99%80-MongoDB%EB%A5%BC-%EC%97%B0%EA%B2%B0)
+        
+</div>
+</details>
+
+<details>
+<summary> 게시글 정렬 기능 </summary>
+<div markdown="1">
+  
+  - sort()메서드 활용 
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EC%B5%9C%EC%8B%A0-%EC%9D%B8%EA%B8%B0%EC%88%9C%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A0%AC)
+        
+</div>
+</details>
+
+<details>
+<summary> 내용 검색 기능 </summary>
+<div markdown="1">
+  
+  - sort()메서드 활용 
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EC%B5%9C%EC%8B%A0-%EC%9D%B8%EA%B8%B0%EC%88%9C%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A0%AC)
+        
+</div>
+</details>
 
 </br>
 
