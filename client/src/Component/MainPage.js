@@ -26,9 +26,9 @@ const MainPage = () => {
 
   // console.log(postList);
 
-  setTimeout(() => {
-    setLoading(true);
-  }, 1000);
+  // setTimeout(() => {
+  //   setLoading(true);
+  // }, 1000);
 
   const getPostLoadMore = () => {
     let body = {
@@ -48,6 +48,7 @@ const MainPage = () => {
           if (res.data.postList.length < 5) {
             setLoadMore(false);
           }
+          setLoading(true);
         }
       })
       .catch((err) => {
@@ -77,6 +78,7 @@ const MainPage = () => {
           if (res.data.postList.length === 0) {
             setLoadMore(false);
           }
+          setLoading(true);
         }
       })
       .catch((err) => {
