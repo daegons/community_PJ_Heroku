@@ -45,6 +45,7 @@ router.post("/submit", (req, res) => {
 });
 
 router.post("/list", (req, res) => {
+  //자료형 선언
   let sort = {};
 
   if (req.body.sort === "최신글") {
@@ -53,22 +54,25 @@ router.post("/list", (req, res) => {
     //인기글
     sort.repleNum = -1;
   }
-
   //몽고DB에서 doc찾는 방법은 find()
-  //$regex = 포함 의미
-  // console.log(req.body);
   Post.find({
+    //제목이나 내용 둘중 하나에만 걸려도 return으로 $or사용
     $or: [
+      //post DB에 있는 title, content추적
+      ////$regex = cient에서 search 값이 포함 되는 데이터 찾아줍니다.
       { title: { $regex: req.body.search } },
       { content: { $regex: req.body.search } },
     ],
   })
     .populate("author")
     .sort(sort)
-    .skip(req.body.skip) // 처음에는 0이라 첫번째 부터 찾고 이후 5번째부터
+    //skip초기값 0이라 0~4까지 찾고
+    //이후에는 skip + res.data.postList.length기 때문에 5부터 5개를 찾습니다.
+    .skip(req.body.skip)
     .limit(5) //한번에 찾을 doc의 숫자
     .exec()
     .then((doc) => {
+      // console.log(doc);
       //응답으로 postList: doc로  클라 쪽으로 보냄
       res.status(200).json({ success: true, postList: doc });
     })

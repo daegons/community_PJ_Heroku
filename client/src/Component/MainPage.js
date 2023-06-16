@@ -26,10 +26,13 @@ const MainPage = () => {
 
   // console.log(postList);
 
+<<<<<<< HEAD
   // setTimeout(() => {
   //   setLoading(true);
   // }, 1000);
 
+=======
+>>>>>>> 86fa96600a03e3e5a05b745a3068e09cecfa535d
   const getPostLoadMore = () => {
     let body = {
       sort: sort,
@@ -41,6 +44,8 @@ const MainPage = () => {
       .post("/api/post/list", body)
       .then((res) => {
         // console.log([...res.data.postList]);
+        console.log("postList length", res.data.postList.length);
+        console.log("skip", skip);
         if (res.data.success) {
           //0 ~ 4번째 들고옴 5개
           setPostList([...postList, ...res.data.postList]);
@@ -56,7 +61,7 @@ const MainPage = () => {
       });
   };
 
-  const getPostList = () => {
+  const listChange = () => {
     setSkip(0);
     let body = {
       sort: sort,
@@ -67,7 +72,7 @@ const MainPage = () => {
     axios
       .post("/api/post/list", body)
       .then((res) => {
-        // console.log([...res.data.postList]);
+        console.log(res);
         if (res.data.success) {
           //0 ~ 4번째 들고옴 5개
           setPostList([...res.data.postList]);
@@ -86,12 +91,13 @@ const MainPage = () => {
       });
   };
 
+  //sort가 바뀔 때마다 listChange 함수 실행
   useEffect(() => {
-    getPostList();
+    listChange();
   }, [sort]);
 
   const SearchHandler = () => {
-    getPostList();
+    listChange();
   };
 
   const listChangeHandler = (e) => {
@@ -113,25 +119,24 @@ const MainPage = () => {
                 type="text"
                 value={search}
                 onKeyDown={(e) => {
-                  if (e.keyCode === 13) SearchHandler();
+                  e.keyCode === 13 && SearchHandler();
                 }}
                 onChange={(e) => {
                   setSearch(e.currentTarget.value);
                 }}
               />
-              <button onClick={() => SearchHandler()}>
+              <button onClick={SearchHandler}>
                 <img src={searchIcon} alt="메인 아이콘" />
               </button>
             </div>
             <Button
-              // variant={sort}
               style={{
                 fontFamily: "'Yeon Sung', cursive",
                 width: "20%",
                 background: "rgba(26, 96, 158, 0.755)",
                 border: "none",
               }}
-              title={sort}
+              // title={sort}
               onClick={listChangeHandler}
             >
               {sort}
@@ -143,7 +148,7 @@ const MainPage = () => {
               <motion.button
                 className="square"
                 whileHover={{ scaleX: 1.2 }}
-                onClick={() => getPostLoadMore()}
+                onClick={getPostLoadMore}
               >
                 <img src={more} alt="더보기" />
               </motion.button>
