@@ -26,6 +26,13 @@ const MainPage = () => {
 
   // console.log(postList);
 
+<<<<<<< HEAD
+  // setTimeout(() => {
+  //   setLoading(true);
+  // }, 1000);
+
+=======
+>>>>>>> 86fa96600a03e3e5a05b745a3068e09cecfa535d
   const getPostLoadMore = () => {
     let body = {
       sort: sort,
