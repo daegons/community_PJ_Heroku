@@ -1,12 +1,12 @@
 # :pushpin: React.js_community
->커뮤니티 서비스 
- 
->[포트폴리오](https://react-project.herokuapp.com/)
 
->[깃허브](https://github.com/daegons/community_PJ_Heroku)
+> 커뮤니티 서비스
 
->[블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=8)
-</br>
+> [포트폴리오](https://react-project.herokuapp.com/)
+
+> [깃허브](https://github.com/daegons/community_PJ_Heroku)
+
+> [블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=8) > </br>
 
 ## 제작 기간
 
@@ -18,26 +18,28 @@
 ## 사용 기술
 
 #### `Front-end`
-   - react: ^18.2.0
-   - axios: ^1.4.0
-   - bootstrap: ^5.2.3
-   - firebase: ^9.22.0
-   - framer-motion: ^10.12.16
-   - http-proxy-middleware: ^2.0.1
-   - moment: ^2.29.4,
-   - react-router-dom: ^6.11.1
-   - emotion: ^11.11.0
-   - reduxjs-toolkit: ^1.7.1
-   
+
+- react: ^18.2.0
+- axios: ^1.4.0
+- bootstrap: ^5.2.3
+- firebase: ^9.22.0
+- framer-motion: ^10.12.16
+- http-proxy-middleware: ^2.0.1
+- moment: ^2.29.4,
+- react-router-dom: ^6.11.1
+- emotion: ^11.11.0
+- reduxjs-toolkit: ^1.7.1
+
 #### `Back-end`
-  - aws-sdk: ^2.348.0
-  - express: ^4.17.2
-  - mongoose: ^6.1.3
-  - nodemon: ^2.0.22
-  - path: ^0.12.7
-  - multer: ^1.4.4
-  - multer-s3: ^2.10.0
-  
+
+- aws-sdk: ^2.348.0
+- express: ^4.17.2
+- mongoose: ^6.1.3
+- nodemon: ^2.0.22
+- path: ^0.12.7
+- multer: ^1.4.4
+- multer-s3: ^2.10.0
+
 </br>
 
 ## 핵심 기능
@@ -85,6 +87,7 @@
 </br>
 
 ## 트러블 슈팅
+
 <details>
 <summary>server, res.sendFile(경로 문제)</summary>
 <div markdown="1">
@@ -131,7 +134,7 @@
   - [블로그](https://qzom1425.tistory.com/entry/%EA%B8%80-%EC%9E%91%EC%84%B1-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EB%8B%A4-%EC%88%AB%EC%9E%90-%EB%B6%80%EC%97%AC%ED%95%98%EA%B8%B0)
    
 </div>
-</details>    
+</details>
 
 <details>
 <summary> video 태그로 바탕화면에 영상 입힐 시에 아이폰 자동 영상 확대 문제(안드로이드는 정상) </summary>
@@ -140,7 +143,7 @@
   - video태그에 playsInline 속성 추가로 해결
   
 </div>
-</details>    
+</details>
 
 <details>
 <summary> firebase import 버전 문제 </summary>
@@ -174,10 +177,10 @@
     
 </br>
     
-## 회고 및 느낀점
+<!-- ## 회고 및 느낀점
 >[개인 포트폴리오 개발 회고](https://qzom1425.tistory.com/entry/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0-%EB%B0%8F-%EB%8A%90%EB%82%80%EC%A0%90)    
   
-</br>
+</br> -->
   
 ## 팀 프로젝트 및 개인 작업물
 
