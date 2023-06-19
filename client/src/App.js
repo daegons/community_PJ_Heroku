@@ -22,9 +22,9 @@ import MainPage from "./Component/MainPage";
 
 import "./Component/assets/Landingpage.css";
 
-import yousolo from "./Component/assets/olnyphYousolo.mp4";
+// import yousolo from "./Component/assets/olnyphYousolo.mp4";
 // import tv from "./Component/assets/tv.mp4";
-// import cloud from "./Component/assets/cloud.mp4";
+import cloud from "./Component/assets/cloud.mp4";
 // import moldives from "./Component/assets/moldives.mp4";
 
 import Footer from "./Component/Post/Footer";
@@ -69,7 +69,7 @@ function App() {
         <div className={`landingpage ${tab === true ? "active" : ""}`}>
           <video
             // poster="./Component/assets/pictur_moldives.jpg"
-            src={yousolo}
+            src={cloud}
             autoPlay
             loop
             muted
