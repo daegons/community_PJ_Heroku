@@ -1,4 +1,4 @@
-# :pushpin: community
+# :pushpin: React.js_community
 >커뮤니티 서비스 
  
 >[포트폴리오](https://react-project.herokuapp.com/)
@@ -8,14 +8,14 @@
 >[블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=8)
 </br>
 
-## 1. 제작 기간
+## 제작 기간
 
 - 2023년 5월 ~ 작업중
 - 개인 프로젝트
 
 </br>
 
-## 2. 사용 기술
+## 사용 기술
 
 #### `Front-end`
    - react: ^18.2.0
@@ -40,54 +40,45 @@
   
 </br>
 
+## 핵심 기능
 
-## 4. 핵심 기능
-server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신을 통해 </br> mongoose를 활용하여 mongoDB에 등록 및 수정 삭제(CRUD)정보를 웹페이지에 보여줍니다.
-
-
-- **Axios 비동기 요청** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b587bbff4dce02e3bec4f4787151a9b6fa326319/frontend/src/components/PostInput.vue#L67)
-  - Vue.js로 렌더링된 화면단에서, 사용자가 등록을 시도한 URL의 모양새를 정규식으로 확인합니다.
-  - URL의 모양새가 아닌 경우, 에러 메세지를 띄웁니다.
+<details>
+<summary> 로그인 기능 </summary>
+<div markdown="1">
   
-### 4.3. Controller
+  - firebase Auth 활용
+  - [블로그](https://qzom1425.tistory.com/entry/%EC%9C%A0%EC%A0%80-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5-firebase-auth1-1)
+        
+</div>
+</details>
 
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_controller.png)
+<details>
+<summary> 게시글 수정,삭제,등록 기능 </summary>
+<div markdown="1">
+  
+  - mongoose를 사용하여 mongoDB에 작업 
+  - [블로그](https://qzom1425.tistory.com/entry/Mongoose%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-Nodejs%EC%99%80-MongoDB%EB%A5%BC-%EC%97%B0%EA%B2%B0)
+        
+</div>
+</details>
 
-- **요청 처리** :pushpin: [코드 확인](https://github.com/Integerous/goQuality/blob/b2c5e60761b6308f14eebe98ccdb1949de6c4b99/src/main/java/goQuality/integerous/controller/PostRestController.java#L55)
-  - Controller에서는 요청을 화면단에서 넘어온 요청을 받고, Service 계층에 로직 처리를 위임합니다.
+<details>
+<summary> 게시글 정렬 기능 </summary>
+<div markdown="1">
+  
+  - sort()메서드 활용 
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EC%B5%9C%EC%8B%A0-%EC%9D%B8%EA%B8%B0%EC%88%9C%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A0%AC)
+        
+</div>
+</details>
 
-- **결과 응답** :pushpin: [코드 확인]()
-  - Service 계층에서 넘어온 로직 처리 결과(메세지)를 화면단에 응답해줍니다.
-
-### 4.4. Service
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service1.png)
-
-- **Http 프로토콜 추가 및 trim()** :pushpin: [코드 확인]()
-  - 사용자가 URL 입력 시 Http 프로토콜을 생략하거나 공백을 넣은 경우,  
-  올바른 URL이 될 수 있도록 Http 프로토콜을 추가해주고, 공백을 제거해줍니다.
-
-- **URL 접속 확인** :pushpin: [코드 확인]()
-  - 화면단에서 모양새만 확인한 URL이 실제 리소스로 연결되는지 HttpUrlConnection으로 테스트합니다.
-  - 이 때, 빠른 응답을 위해 Request Method를 GET이 아닌 HEAD를 사용했습니다.
-  - (HEAD 메소드는 GET 메소드의 응답 결과의 Body는 가져오지 않고, Header만 확인하기 때문에 GET 메소드에 비해 응답속도가 빠릅니다.)
-
-  ![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service2.png)
-
-- **Jsoup 이미지, 제목 파싱** :pushpin: [코드 확인]()
-  - URL 접속 확인결과 유효하면 Jsoup을 사용해서 입력된 URL의 이미지와 제목을 파싱합니다.
-  - 이미지는 Open Graphic Tag를 우선적으로 파싱하고, 없을 경우 첫 번째 이미지와 제목을 파싱합니다.
-  - 컨텐츠에 이미지가 없을 경우, 미리 설정해둔 기본 이미지를 사용하고, 제목이 없을 경우 생략합니다.
-
-
-### 4.5. Repository
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_repo.png)
-
-- **컨텐츠 저장** :pushpin: [코드 확인]()
-  - URL 유효성 체크와 이미지, 제목 파싱이 끝난 컨텐츠는 DB에 저장합니다.
-  - 저장된 컨텐츠는 다시 Repository - Service - Controller를 거쳐 화면단에 송출됩니다.
-
+<details>
+<summary> 내용 검색 기능 </summary>
+<div markdown="1">
+  
+  - $regex(정규표현식) 활용
+  - [블로그](https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80)
+        
 </div>
 </details>
 
@@ -182,6 +173,52 @@ server와 client간의 axios(비동기 통신)를 활용한 데이터 송수신�
 </details> 
     
 </br>
+    
+## 회고 및 느낀점
+>[개인 포트폴리오 개발 회고](https://qzom1425.tistory.com/entry/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0-%EB%B0%8F-%EB%8A%90%EB%82%80%EC%A0%90)    
+  
+</br>
+  
+## 팀 프로젝트 및 개인 작업물
 
-## 6. 회고 / 느낀점
->프로젝트 개발 회고 글: 
+<details>
+<summary> 팀프로젝트)카카오맵을 활용하여 관광지 검색 사이트 구현 </summary>
+<div markdown="1">
+  
+  * 맡은 작업
+    - 지역별 관광지 정보 및 좌표 api data searching
+    - 서브 페이지, 게시판 구현 
+  - [사이트](https://daegons.github.io/t-project1/)
+  - [회고 및 느낀점](https://qzom1425.tistory.com/entry/%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0)
+        
+</div>
+</details>
+
+<details>
+<summary> 개인)웹 사이트 구현 </summary>
+<div markdown="1">
+  
+  - javascript, jQuery, html, css를 사용하여 웹사이트 구현
+  - [사이트](https://daegons.github.io/responsive_web_poroject/)
+        
+</div>
+</details>
+
+<details>
+<summary> 개인)react다이어리 사이트 구현(공부용) </summary>
+<div markdown="1">
+  
+  - [사이트](https://daegon---react-project.web.app/)
+        
+</div>
+</details>
+
+<details>
+<summary> 개인)웹(nike) 사이트 구현(학원 공부용) </summary>
+<div markdown="1">
+  
+  - [사이트](https://daegons.github.io/study_Web_Nike/)
+        
+</div>
+</details>
+</br>
