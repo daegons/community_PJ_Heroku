@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.05cae22b.css",
-    "main.js": "/static/js/main.266a6870.js",
+    "main.js": "/static/js/main.600b2f83.js",
     "static/media/cloud.mp4": "/static/media/cloud.98a0b1b542c0403aa4c0.mp4",
-    "static/media/soccerPlace.jpg": "/static/media/soccerPlace.9aceb6dd8714122a6a95.jpg",
+    "static/media/soccerPlace.jpg": "/static/media/soccerPlace.bf1b04d3be667989cd70.jpg",
     "static/media/soccor.png": "/static/media/soccor.bb8da981e356630369e4.png",
     "static/media/lightoff.svg": "/static/media/lightoff.c20cacce9b3247885d6fdcd97daa9a82.svg",
     "static/media/lighton.svg": "/static/media/lighton.0208323253e2adbeebfac2bfcecb4d42.svg",
@@ -18,10 +18,10 @@
     "static/media/contentWright.svg": "/static/media/contentWright.9c1b0fcf855b9352a6cab52fc1007f4f.svg",
     "static/media/correction.svg": "/static/media/correction.806f82b21ee85fa2346c518afa8bf88d.svg",
     "main.05cae22b.css.map": "/static/css/main.05cae22b.css.map",
-    "main.266a6870.js.map": "/static/js/main.266a6870.js.map"
+    "main.600b2f83.js.map": "/static/js/main.600b2f83.js.map"
   },
   "entrypoints": [
     "static/css/main.05cae22b.css",
-    "static/js/main.266a6870.js"
+    "static/js/main.600b2f83.js"
   ]
 }

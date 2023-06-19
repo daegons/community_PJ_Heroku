@@ -23,7 +23,6 @@ const SubPage = () => {
         <SubPageDiv>
           <img id="place" src={soccerPlace} alt="축구장 이미지" />
           <img src={soccor} alt="축구장 이미지" />
-          {/* <h1>서브페이지 입니다.</h1> */}
           {/* <ReactPlayer
         url={"https://youtu.be/UxpjpxLi-Qg"}
         width="100%"
@@ -43,11 +42,8 @@ const SubPage = () => {
               bottom: 250,
             }}
             style={{
-              // background: "white",
               height: "30px",
               width: "30px",
-              // borderRadius: "50%",
-              // overflow: "hidden",
               position: "absolute",
               cursor: "grab",
             }}
@@ -65,7 +61,6 @@ const SubPage = () => {
             style={{
               height: "45px",
               width: "45px",
-              // overflow: "hidden",
               position: "absolute",
               top: "12%",
             }}
@@ -81,11 +76,8 @@ const SubPage = () => {
               bottom: 350,
             }}
             style={{
-              // background: "white",
               height: "45px",
               width: "45px",
-              // borderRadius: "50%",
-              // overflow: "hidden",
               position: "absolute",
               top: "30%",
             }}
@@ -101,11 +93,8 @@ const SubPage = () => {
               bottom: 150,
             }}
             style={{
-              // background: "white",
               height: "45px",
               width: "45px",
-              // borderRadius: "50%",
-              // overflow: "hidden",
               position: "absolute",
               top: "60%",
             }}

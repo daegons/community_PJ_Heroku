@@ -10,10 +10,6 @@ import { MdLogin } from "react-icons/md";
 import { GrLogout } from "react-icons/gr";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-// import { BsEmojiSmile, BsEmojiSunglasses } from "react-icons/bs";
-
-// import mainImg from "./assets/mainIcon.png";
-
 import lightoff from "./assets/lightoff.svg";
 import lighton from "./assets/lighton.svg";
 import contentWright from "./assets/contentWright.svg";

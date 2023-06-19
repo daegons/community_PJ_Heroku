@@ -29,7 +29,6 @@ const Detail = (props) => {
     if (window.confirm("삭제하시겠습니까?")) {
       // console.log(params.postNum); //post id값 ex)1
       let body = {
-        //let body =
         postNum: params.postNum,
       };
       axios
@@ -68,15 +67,12 @@ const Detail = (props) => {
         </div>
         {props.postDetil.image ? (
           <img
-            //배포하면 배포 환경에 맞게 주소 수정해야됨
-            // src={`http://localhost:5000/${postDetil.image}`}
             src={props.postDetil.image}
             alt="이미지"
             style={{ height: "auto", width: "100%", borderRadius: "15px" }}
           />
         ) : null}
         <p className="contents">{props.postDetil.content}</p>
-        {/* <p>댓글 {props.postDetil.repleNum}</p> */}
       </Post>
       {/* uid 값이 일치하면 수정 및 삭제 on */}
       {user.uid === props.postDetil.author.uid && (

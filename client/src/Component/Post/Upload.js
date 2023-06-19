@@ -31,7 +31,6 @@ const Upload = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (title === "") {
-      // return alert("모든 항목을 채워주세요");
       return (titleRef.current.placeholder = "빈 칸 확인해주세요");
     } else if (content === "") {
       return (contentRef.current.placeholder = "빈 칸 확인해주세요");

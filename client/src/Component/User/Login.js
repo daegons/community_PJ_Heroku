@@ -48,7 +48,6 @@ const Login = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // position: "relative",
       }}
     >
       <LoginDiv>

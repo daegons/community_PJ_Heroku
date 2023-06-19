@@ -11,7 +11,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCF, setPasswordCF] = useState("");
-  // const [loaded, setLoaded] = useState(false);
   const [nameCheck, setNameCheck] = useState(false);
   const [nameInfo, setNameInfo] = useState("");
   const [passwordCheck, setPasswordCheck] = useState(false);
@@ -226,7 +225,6 @@ const Register = () => {
           />
           {passwordInfo}
           <button onClick={passwordCheckHandler}>비밀번호 검사</button>
-          {/* disabled={loaded} */}
           <div style={{ textAlign: "center" }}>
             <label htmlFor="">욕설 및 비하 발언 제재 동의</label>
             <input style={{ marginLeft: "5px" }} type="checkbox" />

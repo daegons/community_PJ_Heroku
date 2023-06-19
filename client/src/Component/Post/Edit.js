@@ -9,7 +9,6 @@ const Edit = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [Image, setImage] = useState("");
-  // const [postDetilImage, setPostDetilImage] = useState(postDetil.image);
   // console.log(postDetil.image);
   //현재 페이지 id 때문..
   const params = useParams();

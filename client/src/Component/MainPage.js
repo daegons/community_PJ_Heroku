@@ -5,12 +5,10 @@ import { GNBDiv, FooterDiv } from "../Style/MainPageCSS.js";
 import CountdownTimer from "./assets/CountdownTimer";
 import Loading from "./assets/Loading";
 
-// import { FaSearch } from "react-icons/fa";
 import searchIcon from "./assets/search2.svg";
 
 import more from "./assets/more.svg";
 import { Button } from "react-bootstrap";
-// import zumzum from "./assets/zumzum.svg";
 
 import { motion } from "framer-motion";
 
@@ -25,10 +23,6 @@ const MainPage = () => {
   const [loading, setLoading] = useState(false);
 
   // console.log(postList);
-
-  // setTimeout(() => {
-  //   setLoading(true);
-  // }, 1000);
 
   const getPostLoadMore = () => {
     let body = {
