@@ -4,7 +4,7 @@
 
 > [포트폴리오](https://react-project.herokuapp.com/)
 
-> [블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=8) </br>
+> [블로그](https://qzom1425.tistory.com/category/Project%28%EA%B0%9C%EC%9D%B8%20%EA%B8%B0%EB%A1%9D%EC%9A%A9%29?page=4) </br>
 
 ## 제작 기간
 
