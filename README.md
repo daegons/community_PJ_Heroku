@@ -44,9 +44,8 @@
 
 <details>
 <summary> 로그인 기능 </summary>
-<div markdown="1">
-
-
+<div markdown="2">
+  
   - firebase Auth 활용
   - [블로그](https://qzom1425.tistory.com/entry/%EC%9C%A0%EC%A0%80-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5-firebase-auth1-1)
         
